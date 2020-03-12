@@ -16,7 +16,16 @@ class MenuVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logoutBtnAction(_ sender: Any) {
+        let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstVC")
+        UIApplication.shared.windows.first?.rootViewController = firstVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
+    @IBAction func closeBtnAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -28,7 +28,7 @@ class PageVC: UIViewController {
             viewTypeSegment.selectedTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             viewTypeSegment.thumbViewColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             viewTypeSegment.titlesFont = UIFont(name: "OpenSans-Semibold", size: 14)
-            viewTypeSegment.segmentedBackGroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6022848887)
+            viewTypeSegment.segmentedBackGroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6980950342)
         }
     }
     
@@ -61,6 +61,9 @@ class PageVC: UIViewController {
         containerController.selectController(atIndex: 0, animated: false)
     }
     
+    @IBAction func topMenuBtnAction(_ sender: UIButton) {
+        
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
