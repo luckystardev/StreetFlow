@@ -21,6 +21,8 @@
 		A330B46B2419FB9300C68A16 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B46A2419FB9300C68A16 /* ListVC.swift */; };
 		A330B46D241A002B00C68A16 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B46C241A002B00C68A16 /* PageVC.swift */; };
 		A3553B1F241A20EE00A66339 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3553B1E241A20EE00A66339 /* MenuVC.swift */; };
+		A3553B21241A3D6000A66339 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3553B20241A3D6000A66339 /* SearchVC.swift */; };
+		A3553B23241A3D9E00A66339 /* DealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3553B22241A3D9E00A66339 /* DealVC.swift */; };
 		F82E2C2F91E58D29C605880F /* Pods_StreetFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		A330B46A2419FB9300C68A16 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		A330B46C241A002B00C68A16 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		A3553B1E241A20EE00A66339 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		A3553B20241A3D6000A66339 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		A3553B22241A3D9E00A66339 /* DealVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealVC.swift; sourceTree = "<group>"; };
 		BAB35E315C2FAE051B0D24A4 /* Pods-StreetFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetFlow.debug.xcconfig"; path = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC12F8F8C056A23912E76214 /* Pods-StreetFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetFlow.release.xcconfig"; path = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				A330B4682419FB8200C68A16 /* MapVC.swift */,
 				A330B46A2419FB9300C68A16 /* ListVC.swift */,
 				A3553B1E241A20EE00A66339 /* MenuVC.swift */,
+				A3553B20241A3D6000A66339 /* SearchVC.swift */,
+				A3553B22241A3D9E00A66339 /* DealVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3553B21241A3D6000A66339 /* SearchVC.swift in Sources */,
 				A32AB1BF2418CD0A00102FB2 /* AppDelegate.swift in Sources */,
 				A330B46D241A002B00C68A16 /* PageVC.swift in Sources */,
 				A330B4652419EBEE00C68A16 /* RoundView.swift in Sources */,
@@ -293,6 +300,7 @@
 				A32AB1D92418D88100102FB2 /* AppDefine.swift in Sources */,
 				A3553B1F241A20EE00A66339 /* MenuVC.swift in Sources */,
 				A32AB1C12418CD0A00102FB2 /* SceneDelegate.swift in Sources */,
+				A3553B23241A3D9E00A66339 /* DealVC.swift in Sources */,
 				A330B4692419FB8200C68A16 /* MapVC.swift in Sources */,
 				A330B4672419EC0A00C68A16 /* TopRoundView.swift in Sources */,
 				A32AB1DB2418D8AE00102FB2 /* LoginVC.swift in Sources */,
