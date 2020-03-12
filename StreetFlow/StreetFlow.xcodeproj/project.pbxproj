@@ -17,6 +17,8 @@
 		A330B4632419EBDB00C68A16 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B4622419EBDB00C68A16 /* RoundButton.swift */; };
 		A330B4652419EBEE00C68A16 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B4642419EBEE00C68A16 /* RoundView.swift */; };
 		A330B4672419EC0A00C68A16 /* TopRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B4662419EC0A00C68A16 /* TopRoundView.swift */; };
+		A330B4692419FB8200C68A16 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B4682419FB8200C68A16 /* MapVC.swift */; };
+		A330B46B2419FB9300C68A16 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B46A2419FB9300C68A16 /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A330B4622419EBDB00C68A16 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		A330B4642419EBEE00C68A16 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		A330B4662419EC0A00C68A16 /* TopRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundView.swift; sourceTree = "<group>"; };
+		A330B4682419FB8200C68A16 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		A330B46A2419FB9300C68A16 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				A32AB1DA2418D8AE00102FB2 /* LoginVC.swift */,
+				A330B4682419FB8200C68A16 /* MapVC.swift */,
+				A330B46A2419FB9300C68A16 /* ListVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -201,8 +207,10 @@
 				A32AB1BF2418CD0A00102FB2 /* AppDelegate.swift in Sources */,
 				A330B4652419EBEE00C68A16 /* RoundView.swift in Sources */,
 				A330B4632419EBDB00C68A16 /* RoundButton.swift in Sources */,
+				A330B46B2419FB9300C68A16 /* ListVC.swift in Sources */,
 				A32AB1D92418D88100102FB2 /* AppDefine.swift in Sources */,
 				A32AB1C12418CD0A00102FB2 /* SceneDelegate.swift in Sources */,
+				A330B4692419FB8200C68A16 /* MapVC.swift in Sources */,
 				A330B4672419EC0A00C68A16 /* TopRoundView.swift in Sources */,
 				A32AB1DB2418D8AE00102FB2 /* LoginVC.swift in Sources */,
 			);

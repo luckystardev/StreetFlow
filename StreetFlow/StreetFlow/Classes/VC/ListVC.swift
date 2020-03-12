@@ -1,14 +1,14 @@
 //
-//  LoginVC.swift
+//  ListVC.swift
 //  StreetFlow
 //
-//  Created by Alex on 3/11/20.
+//  Created by Alex on 3/12/20.
 //  Copyright © 2020 ClubA. All rights reserved.
 //
 
 import UIKit
 
-class LoginVC: UIViewController {
+class ListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +17,6 @@ class LoginVC: UIViewController {
     }
     
 
-    @IBAction func loginBtnAction(_ sender: Any) {
-        let mapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapVC")
-        self.navigationController?.pushViewController(mapVC, animated: true)
-    }
-    
-    @IBAction func signupAction(_ sender: Any) {
-        
-    }
     /*
     // MARK: - Navigation
 
