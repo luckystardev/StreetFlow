@@ -18,8 +18,8 @@ class LoginVC: UIViewController {
     
 
     @IBAction func loginBtnAction(_ sender: Any) {
-        let mapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapVC")
-        self.navigationController?.pushViewController(mapVC, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func signupAction(_ sender: Any) {

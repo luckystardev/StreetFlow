@@ -19,6 +19,8 @@
 		A330B4672419EC0A00C68A16 /* TopRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B4662419EC0A00C68A16 /* TopRoundView.swift */; };
 		A330B4692419FB8200C68A16 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B4682419FB8200C68A16 /* MapVC.swift */; };
 		A330B46B2419FB9300C68A16 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B46A2419FB9300C68A16 /* ListVC.swift */; };
+		A330B46D241A002B00C68A16 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330B46C241A002B00C68A16 /* PageVC.swift */; };
+		F82E2C2F91E58D29C605880F /* Pods_StreetFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		A330B4662419EC0A00C68A16 /* TopRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundView.swift; sourceTree = "<group>"; };
 		A330B4682419FB8200C68A16 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		A330B46A2419FB9300C68A16 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		A330B46C241A002B00C68A16 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		BAB35E315C2FAE051B0D24A4 /* Pods-StreetFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetFlow.debug.xcconfig"; path = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.debug.xcconfig"; sourceTree = "<group>"; };
+		C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC12F8F8C056A23912E76214 /* Pods-StreetFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetFlow.release.xcconfig"; path = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82E2C2F91E58D29C605880F /* Pods_StreetFlow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85E174A08B214B626E3E69E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAB35E315C2FAE051B0D24A4 /* Pods-StreetFlow.debug.xcconfig */,
+				EC12F8F8C056A23912E76214 /* Pods-StreetFlow.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A32AB1B22418CD0900102FB2 = {
 			isa = PBXGroup;
 			children = (
 				A32AB1BD2418CD0A00102FB2 /* StreetFlow */,
 				A32AB1BC2418CD0A00102FB2 /* Products */,
+				85E174A08B214B626E3E69E3 /* Pods */,
+				E8B4D91BD249D4FBADEEA67B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A32AB1DA2418D8AE00102FB2 /* LoginVC.swift */,
+				A330B46C241A002B00C68A16 /* PageVC.swift */,
 				A330B4682419FB8200C68A16 /* MapVC.swift */,
 				A330B46A2419FB9300C68A16 /* ListVC.swift */,
 			);
@@ -133,6 +152,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		E8B4D91BD249D4FBADEEA67B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A32AB1CF2418CD0D00102FB2 /* Build configuration list for PBXNativeTarget "StreetFlow" */;
 			buildPhases = (
+				23092107A51BD83C9649F9F7 /* [CP] Check Pods Manifest.lock */,
 				A32AB1B72418CD0A00102FB2 /* Sources */,
 				A32AB1B82418CD0A00102FB2 /* Frameworks */,
 				A32AB1B92418CD0A00102FB2 /* Resources */,
+				2706087C79D5E4432865749C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,12 +228,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23092107A51BD83C9649F9F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreetFlow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2706087C79D5E4432865749C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreetFlow/Pods-StreetFlow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MASegmentedControl/MASegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyPageController/SwiftyPageController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPageController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StreetFlow/Pods-StreetFlow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A32AB1B72418CD0A00102FB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A32AB1BF2418CD0A00102FB2 /* AppDelegate.swift in Sources */,
+				A330B46D241A002B00C68A16 /* PageVC.swift in Sources */,
 				A330B4652419EBEE00C68A16 /* RoundView.swift in Sources */,
 				A330B4632419EBDB00C68A16 /* RoundButton.swift in Sources */,
 				A330B46B2419FB9300C68A16 /* ListVC.swift in Sources */,
@@ -354,6 +433,7 @@
 		};
 		A32AB1D02418CD0D00102FB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAB35E315C2FAE051B0D24A4 /* Pods-StreetFlow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -371,6 +451,7 @@
 		};
 		A32AB1D12418CD0D00102FB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC12F8F8C056A23912E76214 /* Pods-StreetFlow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

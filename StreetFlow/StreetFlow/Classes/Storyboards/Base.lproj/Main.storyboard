@@ -156,6 +156,41 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="133.74384236453201"/>
         </scene>
+        <!--PageVC-->
+        <scene sceneID="xAv-NQ-z9L">
+            <objects>
+                <viewController storyboardIdentifier="PageVC" id="y5A-nt-5YI" customClass="PageVC" customModule="StreetFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F0a-Cm-aSd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-DC-ENn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="rkC-fZ-mbY" kind="embed" id="9HC-WA-e4W"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGA-CT-DLu" customClass="MASegmentedControl" customModule="MASegmentedControl">
+                                <rect key="frame" x="20" y="39" width="290" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.59629173801369861" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="y5A-nt-5YI" eventType="valueChanged" id="ytS-8J-LFl"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vRm-xn-h1W"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewTypeSegment" destination="vGA-CT-DLu" id="ABC-1h-Xfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V69-H3-BaN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="133.74384236453201"/>
+        </scene>
         <!--MapVC-->
         <scene sceneID="8wv-4T-hPe">
             <objects>
@@ -175,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEY-C3-yV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="133.74384236453201"/>
+            <point key="canvasLocation" x="1073" y="840"/>
         </scene>
         <!--ListVC-->
         <scene sceneID="jMc-uW-YCw">
@@ -190,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zf-US-E5V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2623.1999999999998" y="133.74384236453201"/>
+            <point key="canvasLocation" x="1801" y="839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Ll-gp-9ei">
@@ -207,7 +242,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Rd-Q6-BAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.40000000000001" y="133.74384236453201"/>
+            <point key="canvasLocation" x="329" y="134"/>
+        </scene>
+        <!--Swifty Page Controller-->
+        <scene sceneID="gYk-Qu-wti">
+            <objects>
+                <viewController id="rkC-fZ-mbY" customClass="SwiftyPageController" customModule="SwiftyPageController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fw8-mQ-0yB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Y3S-4t-uhj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L3N-EO-qS1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="134"/>
         </scene>
     </scenes>
     <resources>

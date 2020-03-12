@@ -1,0 +1,20 @@
+PODS:
+  - MASegmentedControl (0.0.3)
+  - SwiftyPageController (0.1.2)
+
+DEPENDENCIES:
+  - MASegmentedControl
+  - SwiftyPageController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MASegmentedControl
+    - SwiftyPageController
+
+SPEC CHECKSUMS:
+  MASegmentedControl: 81aa9aa326e27e969ef44e34285bb400649497eb
+  SwiftyPageController: d077d0e1e609ced8c70d2109a445e5df55837b30
+
+PODFILE CHECKSUM: 06407e353648d00eda39e10fef0d50d3bad923ab
+
+COCOAPODS: 1.6.1

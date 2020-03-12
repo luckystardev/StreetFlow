@@ -1,0 +1,810 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		107AA40C483D684CF3CA88A3138E7D71 /* MASegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = AA794472B624DA00F601406C6EA2559C /* MASegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21CC1FE975DB3CC228A7FF2BEA58D55E /* MASegmentedControl+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE9558521DDF75D527A2756D5F0A35 /* MASegmentedControl+actions.swift */; };
+		25784544D25F9D7C24F824132992F6FC /* MASegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59184EF42E7A90903E3D6800B9B794 /* MASegmentedControl.swift */; };
+		3812E9973EA6A3FB34EAD02B36EEC353 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */; };
+		523C8C8C5B22CA2617FB5E1552CF3C44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
+		65219FC4D7ECBDC8E63AA1773A407BD6 /* MASegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BA9E1CDFB69CF045EE2AED595B29B7 /* MASegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6747F1E8589D9D45B1A294C9EA14711C /* SwiftyPageControllerAnimatorDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02FC878290C1E401F5386FDFDDC3F9 /* SwiftyPageControllerAnimatorDefault.swift */; };
+		6C05FF5F1975FBB4DDC101AC2EF3DD3F /* SwiftyPageController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8974AEE81A3C1D5D01FD16002A36C161 /* SwiftyPageController-dummy.m */; };
+		6F3ED7C0C3DE6412B9414BEC73CD2D62 /* Pods-StreetFlow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6E275738B83B19C20F18E713E572F1 /* Pods-StreetFlow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84D23F78B13C01EB56A52470E37E6912 /* Pods-StreetFlow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9343B0CC28C9C548A111CC77DD0F7296 /* Pods-StreetFlow-dummy.m */; };
+		AB01F78D1C6536DD9A24C34DD5992C2D /* SwiftyPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F14CA29296A2211D197B422EE3E589 /* SwiftyPageController.swift */; };
+		BFD56CA368FB7F81787EF3CE0F8446A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
+		D6054EF646E6E69814533883CC116A2A /* MASegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBD1EEACAF805F8F417D939301D9918 /* MASegmentedControl-dummy.m */; };
+		E30818E2C52E294139564D554C0ED5E3 /* SwiftyPageControllerAnimatorParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934A9B4348DBF0E8312995853046AF1 /* SwiftyPageControllerAnimatorParallax.swift */; };
+		E49262453B2F7BBC49CEE7D70F093224 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
+		E9D3341BE019F7DBEDAE52B27FD6D938 /* SwiftyPageController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7023420500E08F5508C7E61B87E25D65 /* SwiftyPageController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B05D06DD91E2DBF75AF5E9B034C16EF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5647F1EF1F2BE1ECA15B66F5E75ADEEE;
+			remoteInfo = MASegmentedControl;
+		};
+		CFF1FD8CFF0379DC64CDFDBA406D864C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72D40BA26585DC9B141008B9BD32BDFC;
+			remoteInfo = SwiftyPageController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0281E67207AA9635E57FBD11A9E8A2E0 /* MASegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MASegmentedControl.xcconfig; sourceTree = "<group>"; };
+		06CE9558521DDF75D527A2756D5F0A35 /* MASegmentedControl+actions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MASegmentedControl+actions.swift"; path = "MASegmentedControl/Class/MASegmentedControl+actions.swift"; sourceTree = "<group>"; };
+		0934A9B4348DBF0E8312995853046AF1 /* SwiftyPageControllerAnimatorParallax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyPageControllerAnimatorParallax.swift; path = SwiftyPageController/Classes/SwiftyPageControllerAnimatorParallax.swift; sourceTree = "<group>"; };
+		0B1A1C960D5A6A6AE3EF8DA219DC45B4 /* MASegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MASegmentedControl.modulemap; sourceTree = "<group>"; };
+		116D29FFD1396B82EFEF9CF54ACC64E8 /* Pods-StreetFlow-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StreetFlow-acknowledgements.plist"; sourceTree = "<group>"; };
+		19346704C5AB430790400E39B12C11A1 /* Pods-StreetFlow-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StreetFlow-Info.plist"; sourceTree = "<group>"; };
+		3C02FC878290C1E401F5386FDFDDC3F9 /* SwiftyPageControllerAnimatorDefault.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyPageControllerAnimatorDefault.swift; path = SwiftyPageController/Classes/SwiftyPageControllerAnimatorDefault.swift; sourceTree = "<group>"; };
+		3EDD43417E417A4071B05662F756B8C5 /* Pods-StreetFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StreetFlow.debug.xcconfig"; sourceTree = "<group>"; };
+		40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		45BA9E1CDFB69CF045EE2AED595B29B7 /* MASegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MASegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		4C59184EF42E7A90903E3D6800B9B794 /* MASegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MASegmentedControl.swift; path = MASegmentedControl/Class/MASegmentedControl.swift; sourceTree = "<group>"; };
+		5B6E275738B83B19C20F18E713E572F1 /* Pods-StreetFlow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StreetFlow-umbrella.h"; sourceTree = "<group>"; };
+		5BFB9A69C62660FEE0F7A900BB46EB92 /* MASegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MASegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		5EBD1EEACAF805F8F417D939301D9918 /* MASegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MASegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		7023420500E08F5508C7E61B87E25D65 /* SwiftyPageController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyPageController-umbrella.h"; sourceTree = "<group>"; };
+		749CBDCCB30218B52C40170E19DB4734 /* SwiftyPageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyPageController.framework; path = SwiftyPageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76AD7E5E605FCE194F22F303503232E8 /* Pods_StreetFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StreetFlow.framework; path = "Pods-StreetFlow.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8974AEE81A3C1D5D01FD16002A36C161 /* SwiftyPageController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyPageController-dummy.m"; sourceTree = "<group>"; };
+		8F8CAD94CA208FE6AC325B9BEFF140D5 /* SwiftyPageController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyPageController-Info.plist"; sourceTree = "<group>"; };
+		9343B0CC28C9C548A111CC77DD0F7296 /* Pods-StreetFlow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StreetFlow-dummy.m"; sourceTree = "<group>"; };
+		9CAE92ECBA9B2CEDA469490532B3C7B2 /* Pods-StreetFlow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StreetFlow.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D998F30C9F38535D71D5CF7A63B46A1 /* MASegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MASegmentedControl.framework; path = MASegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E656607DBBA2F317A214EE9FE591B87 /* SwiftyPageController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyPageController.xcconfig; sourceTree = "<group>"; };
+		A1CD73BAB1D31DDBF48AE1F3F052D081 /* SwiftyPageController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyPageController-prefix.pch"; sourceTree = "<group>"; };
+		AA794472B624DA00F601406C6EA2559C /* MASegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASegmentedControl.h; path = MASegmentedControl/MASegmentedControl.h; sourceTree = "<group>"; };
+		B47B817E65FC4AC444081708DBB33C22 /* Pods-StreetFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StreetFlow.release.xcconfig"; sourceTree = "<group>"; };
+		C1D8C688C68A90C49005D923C46C6782 /* SwiftyPageController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyPageController.modulemap; sourceTree = "<group>"; };
+		D6E9857BE8A28EB5B8756464A4605A85 /* Pods-StreetFlow-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StreetFlow-frameworks.sh"; sourceTree = "<group>"; };
+		D95DACFA663C795C93BF68ECDCCEB3E3 /* MASegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MASegmentedControl-Info.plist"; sourceTree = "<group>"; };
+		EAC3F375F7D8B5FDE86023F36C2D1795 /* Pods-StreetFlow-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StreetFlow-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F3F14CA29296A2211D197B422EE3E589 /* SwiftyPageController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyPageController.swift; path = SwiftyPageController/Classes/SwiftyPageController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39D5E4B1158AAEA907AF7ADD2DC5F3DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523C8C8C5B22CA2617FB5E1552CF3C44 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ADE5B348E3D8B3DDCB77EBEC685FDEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFD56CA368FB7F81787EF3CE0F8446A7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72BCB13F1530A444D8A50287C759196B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E49262453B2F7BBC49CEE7D70F093224 /* Foundation.framework in Frameworks */,
+				3812E9973EA6A3FB34EAD02B36EEC353 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E169A450ED27AC725DF52953F66D11E0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FBC1ADEA596CE253AAA5734176FB019 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				66019FC2CC9B2419819ABA5E6CE87BB3 /* Pods-StreetFlow */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3AC7D940892951DA30AF7587DAD09789 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E75706D7EDA6025D88CBD9B96285D637 /* MASegmentedControl */,
+				AC6DD847938ED8417903DCF24529F1E7 /* SwiftyPageController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		577278988D42B15576B4A13B6D12A8E8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B1A1C960D5A6A6AE3EF8DA219DC45B4 /* MASegmentedControl.modulemap */,
+				0281E67207AA9635E57FBD11A9E8A2E0 /* MASegmentedControl.xcconfig */,
+				5EBD1EEACAF805F8F417D939301D9918 /* MASegmentedControl-dummy.m */,
+				D95DACFA663C795C93BF68ECDCCEB3E3 /* MASegmentedControl-Info.plist */,
+				5BFB9A69C62660FEE0F7A900BB46EB92 /* MASegmentedControl-prefix.pch */,
+				45BA9E1CDFB69CF045EE2AED595B29B7 /* MASegmentedControl-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MASegmentedControl";
+			sourceTree = "<group>";
+		};
+		66019FC2CC9B2419819ABA5E6CE87BB3 /* Pods-StreetFlow */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE92ECBA9B2CEDA469490532B3C7B2 /* Pods-StreetFlow.modulemap */,
+				EAC3F375F7D8B5FDE86023F36C2D1795 /* Pods-StreetFlow-acknowledgements.markdown */,
+				116D29FFD1396B82EFEF9CF54ACC64E8 /* Pods-StreetFlow-acknowledgements.plist */,
+				9343B0CC28C9C548A111CC77DD0F7296 /* Pods-StreetFlow-dummy.m */,
+				D6E9857BE8A28EB5B8756464A4605A85 /* Pods-StreetFlow-frameworks.sh */,
+				19346704C5AB430790400E39B12C11A1 /* Pods-StreetFlow-Info.plist */,
+				5B6E275738B83B19C20F18E713E572F1 /* Pods-StreetFlow-umbrella.h */,
+				3EDD43417E417A4071B05662F756B8C5 /* Pods-StreetFlow.debug.xcconfig */,
+				B47B817E65FC4AC444081708DBB33C22 /* Pods-StreetFlow.release.xcconfig */,
+			);
+			name = "Pods-StreetFlow";
+			path = "Target Support Files/Pods-StreetFlow";
+			sourceTree = "<group>";
+		};
+		AC6DD847938ED8417903DCF24529F1E7 /* SwiftyPageController */ = {
+			isa = PBXGroup;
+			children = (
+				F3F14CA29296A2211D197B422EE3E589 /* SwiftyPageController.swift */,
+				3C02FC878290C1E401F5386FDFDDC3F9 /* SwiftyPageControllerAnimatorDefault.swift */,
+				0934A9B4348DBF0E8312995853046AF1 /* SwiftyPageControllerAnimatorParallax.swift */,
+				EE859D8AF05EEDD7902467BE3F1EE44E /* Support Files */,
+			);
+			name = SwiftyPageController;
+			path = SwiftyPageController;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				3AC7D940892951DA30AF7587DAD09789 /* Pods */,
+				DA3D44F188680D00B7F4CF098B62506F /* Products */,
+				2FBC1ADEA596CE253AAA5734176FB019 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DA3D44F188680D00B7F4CF098B62506F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D998F30C9F38535D71D5CF7A63B46A1 /* MASegmentedControl.framework */,
+				76AD7E5E605FCE194F22F303503232E8 /* Pods_StreetFlow.framework */,
+				749CBDCCB30218B52C40170E19DB4734 /* SwiftyPageController.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E169A450ED27AC725DF52953F66D11E0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */,
+				ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E75706D7EDA6025D88CBD9B96285D637 /* MASegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				AA794472B624DA00F601406C6EA2559C /* MASegmentedControl.h */,
+				4C59184EF42E7A90903E3D6800B9B794 /* MASegmentedControl.swift */,
+				06CE9558521DDF75D527A2756D5F0A35 /* MASegmentedControl+actions.swift */,
+				577278988D42B15576B4A13B6D12A8E8 /* Support Files */,
+			);
+			name = MASegmentedControl;
+			path = MASegmentedControl;
+			sourceTree = "<group>";
+		};
+		EE859D8AF05EEDD7902467BE3F1EE44E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C1D8C688C68A90C49005D923C46C6782 /* SwiftyPageController.modulemap */,
+				9E656607DBBA2F317A214EE9FE591B87 /* SwiftyPageController.xcconfig */,
+				8974AEE81A3C1D5D01FD16002A36C161 /* SwiftyPageController-dummy.m */,
+				8F8CAD94CA208FE6AC325B9BEFF140D5 /* SwiftyPageController-Info.plist */,
+				A1CD73BAB1D31DDBF48AE1F3F052D081 /* SwiftyPageController-prefix.pch */,
+				7023420500E08F5508C7E61B87E25D65 /* SwiftyPageController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyPageController";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B0DB4A308A8337F81D645595E1EB67D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D3341BE019F7DBEDAE52B27FD6D938 /* SwiftyPageController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B966CE64764BA5A3921BC93CA04A7671 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F3ED7C0C3DE6412B9414BEC73CD2D62 /* Pods-StreetFlow-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC310533A0CFDB33062FC97EA0974466 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65219FC4D7ECBDC8E63AA1773A407BD6 /* MASegmentedControl-umbrella.h in Headers */,
+				107AA40C483D684CF3CA88A3138E7D71 /* MASegmentedControl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5647F1EF1F2BE1ECA15B66F5E75ADEEE /* MASegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 200262152EC2B588A68B9B1C87ADE09C /* Build configuration list for PBXNativeTarget "MASegmentedControl" */;
+			buildPhases = (
+				DC310533A0CFDB33062FC97EA0974466 /* Headers */,
+				0E8B1C08E87C53B22B7FEA25EBC5485C /* Sources */,
+				72BCB13F1530A444D8A50287C759196B /* Frameworks */,
+				EED2B31515BCC65CE313BE0C5585F408 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MASegmentedControl;
+			productName = MASegmentedControl;
+			productReference = 9D998F30C9F38535D71D5CF7A63B46A1 /* MASegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		72D40BA26585DC9B141008B9BD32BDFC /* SwiftyPageController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F954424C1FBFB0D5F3ED0036C3A9812F /* Build configuration list for PBXNativeTarget "SwiftyPageController" */;
+			buildPhases = (
+				B0DB4A308A8337F81D645595E1EB67D5 /* Headers */,
+				383FE1C3581A7B4AA5A796B7548233E8 /* Sources */,
+				39D5E4B1158AAEA907AF7ADD2DC5F3DB /* Frameworks */,
+				AD063257F2327A1E74ACCA4B2EE47D74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyPageController;
+			productName = SwiftyPageController;
+			productReference = 749CBDCCB30218B52C40170E19DB4734 /* SwiftyPageController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D0CA6A0EBB33124F6D0B284DFC1EF3E0 /* Pods-StreetFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB0E5B6BFE59437519540B7E50C33952 /* Build configuration list for PBXNativeTarget "Pods-StreetFlow" */;
+			buildPhases = (
+				B966CE64764BA5A3921BC93CA04A7671 /* Headers */,
+				28CE027F9C7609CBD00D87DDDDE1523D /* Sources */,
+				4ADE5B348E3D8B3DDCB77EBEC685FDEF /* Frameworks */,
+				1ED29CD27B379E9AD425E155BFF1926E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3991BA9CD3B227388EFAD9155F738AE7 /* PBXTargetDependency */,
+				9FA317731B98C5F6C7B1B6DC9C7186D9 /* PBXTargetDependency */,
+			);
+			name = "Pods-StreetFlow";
+			productName = "Pods-StreetFlow";
+			productReference = 76AD7E5E605FCE194F22F303503232E8 /* Pods_StreetFlow.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = DA3D44F188680D00B7F4CF098B62506F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5647F1EF1F2BE1ECA15B66F5E75ADEEE /* MASegmentedControl */,
+				D0CA6A0EBB33124F6D0B284DFC1EF3E0 /* Pods-StreetFlow */,
+				72D40BA26585DC9B141008B9BD32BDFC /* SwiftyPageController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1ED29CD27B379E9AD425E155BFF1926E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD063257F2327A1E74ACCA4B2EE47D74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED2B31515BCC65CE313BE0C5585F408 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E8B1C08E87C53B22B7FEA25EBC5485C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CC1FE975DB3CC228A7FF2BEA58D55E /* MASegmentedControl+actions.swift in Sources */,
+				D6054EF646E6E69814533883CC116A2A /* MASegmentedControl-dummy.m in Sources */,
+				25784544D25F9D7C24F824132992F6FC /* MASegmentedControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28CE027F9C7609CBD00D87DDDDE1523D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D23F78B13C01EB56A52470E37E6912 /* Pods-StreetFlow-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		383FE1C3581A7B4AA5A796B7548233E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C05FF5F1975FBB4DDC101AC2EF3DD3F /* SwiftyPageController-dummy.m in Sources */,
+				AB01F78D1C6536DD9A24C34DD5992C2D /* SwiftyPageController.swift in Sources */,
+				6747F1E8589D9D45B1A294C9EA14711C /* SwiftyPageControllerAnimatorDefault.swift in Sources */,
+				E30818E2C52E294139564D554C0ED5E3 /* SwiftyPageControllerAnimatorParallax.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3991BA9CD3B227388EFAD9155F738AE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASegmentedControl;
+			target = 5647F1EF1F2BE1ECA15B66F5E75ADEEE /* MASegmentedControl */;
+			targetProxy = B05D06DD91E2DBF75AF5E9B034C16EF8 /* PBXContainerItemProxy */;
+		};
+		9FA317731B98C5F6C7B1B6DC9C7186D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyPageController;
+			target = 72D40BA26585DC9B141008B9BD32BDFC /* SwiftyPageController */;
+			targetProxy = CFF1FD8CFF0379DC64CDFDBA406D864C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2145042219EFB9DCDAF5C0BA46BFB0D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B47B817E65FC4AC444081708DBB33C22 /* Pods-StreetFlow.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26E9761469A32F22DD014C0CC6400F76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E656607DBBA2F317A214EE9FE591B87 /* SwiftyPageController.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyPageController/SwiftyPageController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyPageController/SwiftyPageController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyPageController/SwiftyPageController.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyPageController;
+				PRODUCT_NAME = SwiftyPageController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		493189177FD095E8F1CC0EC9207AC862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5AB659C3ED3DBFDF86C26514988ED073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0281E67207AA9635E57FBD11A9E8A2E0 /* MASegmentedControl.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MASegmentedControl/MASegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MASegmentedControl/MASegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MASegmentedControl/MASegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = MASegmentedControl;
+				PRODUCT_NAME = MASegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7634BB8247FC299582B514CD30669FB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E656607DBBA2F317A214EE9FE591B87 /* SwiftyPageController.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyPageController/SwiftyPageController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyPageController/SwiftyPageController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyPageController/SwiftyPageController.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyPageController;
+				PRODUCT_NAME = SwiftyPageController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BEA44734681AAE680168FBD94D1F4FE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0281E67207AA9635E57FBD11A9E8A2E0 /* MASegmentedControl.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MASegmentedControl/MASegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MASegmentedControl/MASegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MASegmentedControl/MASegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = MASegmentedControl;
+				PRODUCT_NAME = MASegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C47B5FC58DBE079D0CA60E0243067BAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EDD43417E417A4071B05662F756B8C5 /* Pods-StreetFlow.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C81EA092D14AE1D1D944AE64377DAA4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		200262152EC2B588A68B9B1C87ADE09C /* Build configuration list for PBXNativeTarget "MASegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEA44734681AAE680168FBD94D1F4FE0 /* Debug */,
+				5AB659C3ED3DBFDF86C26514988ED073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493189177FD095E8F1CC0EC9207AC862 /* Debug */,
+				C81EA092D14AE1D1D944AE64377DAA4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB0E5B6BFE59437519540B7E50C33952 /* Build configuration list for PBXNativeTarget "Pods-StreetFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C47B5FC58DBE079D0CA60E0243067BAA /* Debug */,
+				2145042219EFB9DCDAF5C0BA46BFB0D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F954424C1FBFB0D5F3ED0036C3A9812F /* Build configuration list for PBXNativeTarget "SwiftyPageController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7634BB8247FC299582B514CD30669FB0 /* Debug */,
+				26E9761469A32F22DD014C0CC6400F76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
