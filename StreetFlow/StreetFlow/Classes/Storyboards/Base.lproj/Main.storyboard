@@ -210,6 +210,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="VLB-vT-sGF"/>
                     <connections>
+                        <outlet property="bottomView" destination="lFO-wf-0s3" id="q7s-tb-6WZ"/>
                         <outlet property="bottomViewYConst" destination="W58-5B-TcY" id="66p-a3-oAM"/>
                         <outlet property="emailTxtFld" destination="sz0-Zj-8bc" id="mY8-ce-zH1"/>
                         <outlet property="pwdTxtFld" destination="pl8-SB-U0w" id="stz-15-yMP"/>

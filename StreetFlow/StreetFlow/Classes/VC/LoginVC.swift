@@ -13,6 +13,7 @@ class LoginVC: BaseVC {
     @IBOutlet weak var bottomViewYConst: NSLayoutConstraint!
     @IBOutlet weak var emailTxtFld: UITextField!
     @IBOutlet weak var pwdTxtFld: UITextField!
+    @IBOutlet weak var bottomView: TopRoundView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,13 @@ class LoginVC: BaseVC {
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        bottomView.cornerRadious = 12
+        bottomView.layoutIfNeeded()
+    }
+    
     @IBAction func loginBtnAction(_ sender: Any) {
         self.goNextVCWithID("PageVC")
     }
