@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A327B06B241B555A005821DB /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327B06A241B555A005821DB /* ListCell.swift */; };
 		A32AB1BF2418CD0A00102FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB1BE2418CD0A00102FB2 /* AppDelegate.swift */; };
 		A32AB1C12418CD0A00102FB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB1C02418CD0A00102FB2 /* SceneDelegate.swift */; };
 		A32AB1C62418CD0A00102FB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32AB1C42418CD0A00102FB2 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A327B06A241B555A005821DB /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		A32AB1BB2418CD0A00102FB2 /* StreetFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32AB1BE2418CD0A00102FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A32AB1C02418CD0A00102FB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				A330B4622419EBDB00C68A16 /* RoundButton.swift */,
 				A330B4642419EBEE00C68A16 /* RoundView.swift */,
 				A330B4662419EC0A00C68A16 /* TopRoundView.swift */,
+				A327B06A241B555A005821DB /* ListCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				A3553B21241A3D6000A66339 /* SearchVC.swift in Sources */,
 				A32AB1BF2418CD0A00102FB2 /* AppDelegate.swift in Sources */,
 				A330B46D241A002B00C68A16 /* PageVC.swift in Sources */,
+				A327B06B241B555A005821DB /* ListCell.swift in Sources */,
 				A330B4652419EBEE00C68A16 /* RoundView.swift in Sources */,
 				A330B4632419EBDB00C68A16 /* RoundButton.swift in Sources */,
 				A330B46B2419FB9300C68A16 /* ListVC.swift in Sources */,
