@@ -19,7 +19,7 @@ class SearchVC: BaseVC {
     }
     
     @IBAction func downBtnAction(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -36,7 +36,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.popNextVCWithID("DealVC")
+        self.popNextVCWithID("DealVC", isFull: false)
     }
     
 }

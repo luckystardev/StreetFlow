@@ -20,8 +20,11 @@ class BaseVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func popNextVCWithID(_ storyboardId: String) {
+    func popNextVCWithID(_ storyboardId: String, isFull: Bool) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardId)
+        if isFull {
+            vc.modalPresentationStyle = .fullScreen
+        }        
         self.present(vc, animated: true, completion: nil)
     }
     

@@ -74,7 +74,8 @@ class PageVC: BaseVC {
     
     @IBAction func touchLocationFld(_ sender: Any) {
         print("touchLocationFld")
-        goNextVCWithID("SearchVC")
+//        goNextVCWithID("SearchVC")
+        popNextVCWithID("SearchVC", isFull: true)
     }
     
     // MARK: - Navigation

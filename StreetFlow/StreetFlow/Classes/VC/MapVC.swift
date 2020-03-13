@@ -65,7 +65,7 @@ class MapVC: BaseVC, MKMapViewDelegate, CLLocationManagerDelegate  {
     }
     
     @IBAction func tapPopInfoView(_ sender: Any) {
-        popNextVCWithID("DealVC")
+        popNextVCWithID("DealVC", isFull: false)
     }
     
     //MARK:- CLLocationManagerDelegate Methods

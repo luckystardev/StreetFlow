@@ -32,7 +32,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.popNextVCWithID("DealVC")
+        self.popNextVCWithID("DealVC", isFull: false)
     }
     
 }
