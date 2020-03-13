@@ -16,7 +16,7 @@ class MapVC: BaseVC, MKMapViewDelegate, CLLocationManagerDelegate  {
     @IBOutlet weak var infoView: RoundView!
     @IBOutlet weak var popInfoView: RoundView!
     
-    var locationManager:CLLocationManager!
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +32,10 @@ class MapVC: BaseVC, MKMapViewDelegate, CLLocationManagerDelegate  {
     }
     
     func determineCurrentLocation() {
-        locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }

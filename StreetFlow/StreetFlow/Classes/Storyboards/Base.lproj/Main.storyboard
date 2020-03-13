@@ -661,7 +661,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-Ei-jER">
-                                <rect key="frame" x="20" y="503" width="335" height="45"/>
+                                <rect key="frame" x="20" y="473" width="335" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-FJ-huZ" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
@@ -728,7 +728,7 @@
                             <constraint firstItem="LSm-n9-rOt" firstAttribute="top" secondItem="Z5o-iw-5aV" secondAttribute="top" constant="19" id="1LQ-jB-Wkf"/>
                             <constraint firstItem="LSm-n9-rOt" firstAttribute="trailing" secondItem="Z5o-iw-5aV" secondAttribute="trailing" id="DcA-wU-rxv"/>
                             <constraint firstItem="ujD-Ei-jER" firstAttribute="leading" secondItem="Z5o-iw-5aV" secondAttribute="leading" constant="20" id="HJT-6y-4dM"/>
-                            <constraint firstItem="Z5o-iw-5aV" firstAttribute="bottom" secondItem="ujD-Ei-jER" secondAttribute="bottom" constant="230" id="dBd-6l-mRe"/>
+                            <constraint firstItem="Z5o-iw-5aV" firstAttribute="bottom" secondItem="ujD-Ei-jER" secondAttribute="bottom" constant="260" id="dBd-6l-mRe"/>
                             <constraint firstAttribute="bottom" secondItem="LSm-n9-rOt" secondAttribute="bottom" constant="285" id="hRa-2f-YTd"/>
                             <constraint firstItem="Z5o-iw-5aV" firstAttribute="trailing" secondItem="ujD-Ei-jER" secondAttribute="trailing" constant="20" id="utF-hA-loF"/>
                             <constraint firstItem="LSm-n9-rOt" firstAttribute="leading" secondItem="Z5o-iw-5aV" secondAttribute="leading" id="zdh-pw-DlP"/>
