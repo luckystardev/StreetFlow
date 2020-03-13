@@ -8,12 +8,16 @@
 
 import UIKit
 
-class DealVC: UIViewController {
-
+class DealVC: BaseVC {
+    
+    @IBOutlet weak var selectLocationView: RoundView!
+    @IBOutlet weak var bottomMenuBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        selectLocationView.addShadowEffect()
+        bottomMenuBtn.addShadowEffect()
     }
     
 

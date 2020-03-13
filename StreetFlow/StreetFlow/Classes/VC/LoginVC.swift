@@ -8,8 +8,12 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: BaseVC {
 
+    @IBOutlet weak var bottomViewYConst: NSLayoutConstraint!
+    @IBOutlet weak var emailTxtFld: UITextField!
+    @IBOutlet weak var pwdTxtFld: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,21 +22,21 @@ class LoginVC: UIViewController {
     
 
     @IBAction func loginBtnAction(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageVC")
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.goNextVCWithID("PageVC")
     }
     
     @IBAction func signupAction(_ sender: Any) {
-        
+        //TODO
     }
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.emailTxtFld {
+            self.pwdTxtFld.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
-    */
-
 }

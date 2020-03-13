@@ -10,9 +10,14 @@ import UIKit
 import MASegmentedControl
 import SwiftyPageController
 
-class PageVC: UIViewController {
+class PageVC: BaseVC {
 
     var containerController: SwiftyPageController!
+    
+    @IBOutlet weak var selectLocationView: RoundView!
+    @IBOutlet weak var bottomMenuBtn: UIButton!
+    @IBOutlet weak var selectLocationFld: UITextField!
+    @IBOutlet weak var topMenuBtn: UIButton!
     
     @IBOutlet weak var viewTypeSegment: MASegmentedControl!{
         didSet {
@@ -35,7 +40,9 @@ class PageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        selectLocationView.addShadowEffect()
+        bottomMenuBtn.addShadowEffect()
+        topMenuBtn.addShadowEffect()
     }
     
     @IBAction func segmentChanged(_ sender: MASegmentedControl) {
@@ -64,9 +71,14 @@ class PageVC: UIViewController {
     @IBAction func topMenuBtnAction(_ sender: UIButton) {
         
     }
+    
+    @IBAction func touchLocationFld(_ sender: Any) {
+        print("touchLocationFld")
+        goNextVCWithID("SearchVC")
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let containerController = segue.destination as? SwiftyPageController {
             setupContainerController(containerController)

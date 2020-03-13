@@ -10,9 +10,11 @@ import UIKit
 
 class ListCell: UITableViewCell {
 
+    @IBOutlet weak var bgView: RoundView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bgView.addShadowEffect()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
