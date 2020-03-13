@@ -43,6 +43,7 @@ class PageVC: BaseVC {
         selectLocationView.addShadowEffect()
         bottomMenuBtn.addShadowEffect()
         topMenuBtn.addShadowEffect()
+        viewTypeSegment.addShadowEffect()
     }
     
     @IBAction func segmentChanged(_ sender: MASegmentedControl) {

@@ -11,22 +11,56 @@ import UIKit
 class SearchVC: BaseVC {
 
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var locationView: RoundView!
+    @IBOutlet weak var searchFld: UITextField!
+    @IBOutlet weak var bottomMenuBtn: UIButton!
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        self.searchFld.becomeFirstResponder()
+    }
+    
+    @IBAction func bottomMenuBtnAction(_ sender: Any) {
+        
     }
     
     @IBAction func downBtnAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+}
+
+extension SearchVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.index = 2
+        self.tableview.reloadData()
+        
+        return true
     }
 }
 
 extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return index
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

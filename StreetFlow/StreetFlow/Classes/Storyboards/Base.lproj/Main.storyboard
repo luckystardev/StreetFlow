@@ -549,7 +549,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="122" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LSm-n9-rOt">
-                                <rect key="frame" x="0.0" y="63" width="375" height="749"/>
+                                <rect key="frame" x="0.0" y="63" width="375" height="464"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="uo3-Qf-CZ2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
@@ -660,17 +660,86 @@
                                     <outlet property="delegate" destination="WwA-Xn-gad" id="8dy-9C-Y6x"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-Ei-jER">
+                                <rect key="frame" x="20" y="503" width="335" height="45"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-FJ-huZ" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select a location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFm-59-O51">
+                                                <rect key="frame" x="22" y="0.0" width="230" height="45"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="search" textContentType="location"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WwA-Xn-gad" id="saY-nZ-JKE"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="im_location" translatesAutoresizingMaskIntoConstraints="NO" id="zoq-eP-PmE">
+                                                <rect key="frame" x="250" y="15" width="14" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="14" id="wfY-qO-ntH"/>
+                                                    <constraint firstAttribute="width" constant="14" id="yyu-nE-iLJ"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dFm-59-O51" secondAttribute="bottom" id="0Ww-e5-uOd"/>
+                                            <constraint firstAttribute="trailing" secondItem="zoq-eP-PmE" secondAttribute="trailing" constant="16" id="Wfw-s2-JeI"/>
+                                            <constraint firstItem="dFm-59-O51" firstAttribute="top" secondItem="ypO-FJ-huZ" secondAttribute="top" id="WmS-im-1Mq"/>
+                                            <constraint firstAttribute="trailing" secondItem="dFm-59-O51" secondAttribute="trailing" constant="28" id="nh7-CK-PVH"/>
+                                            <constraint firstItem="zoq-eP-PmE" firstAttribute="top" secondItem="ypO-FJ-huZ" secondAttribute="top" constant="15" id="nxP-c9-YWN"/>
+                                            <constraint firstItem="dFm-59-O51" firstAttribute="leading" secondItem="ypO-FJ-huZ" secondAttribute="leading" constant="22" id="wv8-iE-45A"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7q-OK-cqh">
+                                        <rect key="frame" x="290" y="0.0" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="b76-ml-RKR"/>
+                                        </constraints>
+                                        <state key="normal" image="bt_menu"/>
+                                        <connections>
+                                            <action selector="bottomMenuBtnAction:" destination="WwA-Xn-gad" eventType="touchUpInside" id="XRd-eF-cDG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="D7q-OK-cqh" secondAttribute="bottom" id="0or-NG-QXR"/>
+                                    <constraint firstItem="ypO-FJ-huZ" firstAttribute="top" secondItem="ujD-Ei-jER" secondAttribute="top" id="9Pk-uQ-rD5"/>
+                                    <constraint firstAttribute="bottom" secondItem="ypO-FJ-huZ" secondAttribute="bottom" id="LdK-WF-XDh"/>
+                                    <constraint firstItem="ypO-FJ-huZ" firstAttribute="leading" secondItem="ujD-Ei-jER" secondAttribute="leading" id="MV5-yT-iYo"/>
+                                    <constraint firstItem="D7q-OK-cqh" firstAttribute="top" secondItem="ujD-Ei-jER" secondAttribute="top" id="Plr-Uh-ye7"/>
+                                    <constraint firstAttribute="trailing" secondItem="D7q-OK-cqh" secondAttribute="trailing" id="aYt-px-oTm"/>
+                                    <constraint firstItem="D7q-OK-cqh" firstAttribute="leading" secondItem="ypO-FJ-huZ" secondAttribute="trailing" constant="10" id="cuB-bB-ZaT"/>
+                                    <constraint firstAttribute="height" constant="45" id="lAM-z3-prE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.9137254901960784" green="0.96470588235294119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LSm-n9-rOt" firstAttribute="top" secondItem="Z5o-iw-5aV" secondAttribute="top" constant="19" id="1LQ-jB-Wkf"/>
                             <constraint firstItem="LSm-n9-rOt" firstAttribute="trailing" secondItem="Z5o-iw-5aV" secondAttribute="trailing" id="DcA-wU-rxv"/>
-                            <constraint firstAttribute="bottom" secondItem="LSm-n9-rOt" secondAttribute="bottom" id="hRa-2f-YTd"/>
+                            <constraint firstItem="ujD-Ei-jER" firstAttribute="leading" secondItem="Z5o-iw-5aV" secondAttribute="leading" constant="20" id="HJT-6y-4dM"/>
+                            <constraint firstItem="Z5o-iw-5aV" firstAttribute="bottom" secondItem="ujD-Ei-jER" secondAttribute="bottom" constant="230" id="dBd-6l-mRe"/>
+                            <constraint firstAttribute="bottom" secondItem="LSm-n9-rOt" secondAttribute="bottom" constant="285" id="hRa-2f-YTd"/>
+                            <constraint firstItem="Z5o-iw-5aV" firstAttribute="trailing" secondItem="ujD-Ei-jER" secondAttribute="trailing" constant="20" id="utF-hA-loF"/>
                             <constraint firstItem="LSm-n9-rOt" firstAttribute="leading" secondItem="Z5o-iw-5aV" secondAttribute="leading" id="zdh-pw-DlP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z5o-iw-5aV"/>
                     </view>
                     <connections>
+                        <outlet property="bottomMenuBtn" destination="D7q-OK-cqh" id="51L-7f-SHq"/>
+                        <outlet property="bottomView" destination="ujD-Ei-jER" id="Q6j-kw-Yi6"/>
+                        <outlet property="locationView" destination="ypO-FJ-huZ" id="3Uz-uD-LLH"/>
+                        <outlet property="searchFld" destination="dFm-59-O51" id="ZBz-RW-p93"/>
                         <outlet property="tableview" destination="LSm-n9-rOt" id="eVP-vG-S4c"/>
                         <segue destination="pT2-gb-2cq" kind="presentation" id="CZz-2E-8CZ"/>
                     </connections>
@@ -694,14 +763,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kr-zn-u8K">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kr-zn-u8K">
                                             <rect key="frame" x="160" y="10" width="55" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Ao0-8Q-h9j"/>
+                                                <constraint firstAttribute="width" constant="55" id="QMb-Rx-taE"/>
+                                            </constraints>
                                             <state key="normal" backgroundImage="bt_down"/>
                                         </button>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="voz-Yz-m6P" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voz-Yz-m6P" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="50" width="150" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwv-e7-yaC">
                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -717,15 +788,18 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="CXe-4X-hVy"/>
+                                                <constraint firstAttribute="width" constant="150" id="V2l-WI-xsi"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-eq-H0n" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-eq-H0n" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="90" width="335" height="151"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OWNER &amp; PROPERTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-j9-F4d">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -755,9 +829,8 @@
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AaR-Bs-DXY" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaR-Bs-DXY" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="100" width="335" height="51"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOk-s0-kTV">
                                                             <rect key="frame" x="10" y="10" width="35" height="35"/>
@@ -780,6 +853,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="51" id="0NH-hT-Bim"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="12"/>
@@ -794,15 +870,20 @@
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313725490196" green="0.50980392156862742" blue="0.63137254901960782" alpha="0.096372003424657529" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="AaR-Bs-DXY" secondAttribute="bottom" id="EEU-PM-aNI"/>
+                                                <constraint firstItem="AaR-Bs-DXY" firstAttribute="leading" secondItem="aZr-eq-H0n" secondAttribute="leading" id="SMF-Za-Ih0"/>
+                                                <constraint firstAttribute="trailing" secondItem="AaR-Bs-DXY" secondAttribute="trailing" id="XQj-yL-pv8"/>
+                                                <constraint firstAttribute="height" constant="151" id="xcm-AV-LLt"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-fh-j7h" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-fh-j7h" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="251" width="335" height="89"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SALE INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKF-in-ske">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -841,15 +922,17 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="0.096372003420000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="89" id="S2i-NE-Uly"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4R-Gv-AxG" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4R-Gv-AxG" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="350" width="335" height="135"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MORTGAGE INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBV-vO-SsW">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -902,15 +985,17 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="135" id="kmZ-JY-17f"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-oO-WNv" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-oO-WNv" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="495" width="335" height="178"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bee-mp-0cR">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1005,15 +1090,17 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="0.096372003420000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="178" id="QV6-TL-qeu"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZS6-fA-SFm" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZS6-fA-SFm" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="684" width="335" height="89"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISTRICT INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6r-TR-ZeW">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1038,15 +1125,17 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="89" id="dxO-8C-JkB"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wle-cw-j9J" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wle-cw-j9J" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="783" width="335" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY TAGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-IV-6jQ">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1055,10 +1144,13 @@
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5Q-EU-UlN" customClass="RoundButton" customModule="StreetFlow" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5Q-EU-UlN" customClass="RoundButton" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="35" width="140" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="XJl-4j-fWr"/>
+                                                        <constraint firstAttribute="width" constant="140" id="gZn-SW-7j6"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Broken Window">
                                                         <color key="titleColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1069,9 +1161,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-pk-ibF" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-pk-ibF" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="165" y="35" width="150" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFB-U2-FOD">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -1087,6 +1178,10 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="Xvo-Zv-kg9"/>
+                                                        <constraint firstAttribute="height" constant="30" id="pYt-Ur-v8I"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="15"/>
@@ -1095,26 +1190,30 @@
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="0.096372003420000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="FYx-pk-ibF" secondAttribute="trailing" constant="20" id="Fdi-FZ-C0B"/>
+                                                <constraint firstAttribute="bottom" secondItem="n5Q-EU-UlN" secondAttribute="bottom" constant="15" id="Hzj-Ts-zWi"/>
+                                                <constraint firstAttribute="bottom" secondItem="FYx-pk-ibF" secondAttribute="bottom" constant="15" id="Te2-2W-Qhw"/>
+                                                <constraint firstItem="n5Q-EU-UlN" firstAttribute="leading" secondItem="wle-cw-j9J" secondAttribute="leading" constant="20" id="ezn-Re-fKT"/>
+                                                <constraint firstAttribute="height" constant="80" id="k7b-er-7gl"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="auF-Rl-sn5" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auF-Rl-sn5" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="873" width="335" height="145"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OWNER DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiK-P2-B9D">
-                                                    <rect key="frame" x="20" y="12" width="271" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OWNER DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiK-P2-B9D">
+                                                    <rect key="frame" x="19.999999999999993" y="12" width="110.33333333333331" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJJ-2r-XGd" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJJ-2r-XGd" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="35" width="295" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="im_call" translatesAutoresizingMaskIntoConstraints="NO" id="rRO-Jz-e9c">
                                                             <rect key="frame" x="14" y="14" width="12" height="12"/>
@@ -1129,6 +1228,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="VvP-VA-KKD"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="20"/>
@@ -1141,9 +1243,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xHK-mO-8bg" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHK-mO-8bg" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="85" width="295" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="im_msg" translatesAutoresizingMaskIntoConstraints="NO" id="M30-Wc-zgg">
                                                             <rect key="frame" x="14" y="15" width="12" height="10"/>
@@ -1158,6 +1259,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="h26-67-NgR"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="20"/>
@@ -1172,15 +1276,25 @@
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="zJJ-2r-XGd" firstAttribute="top" secondItem="yiK-P2-B9D" secondAttribute="bottom" constant="6" id="4oR-9g-wb6"/>
+                                                <constraint firstAttribute="trailing" secondItem="zJJ-2r-XGd" secondAttribute="trailing" constant="20" id="YDh-OK-woV"/>
+                                                <constraint firstItem="yiK-P2-B9D" firstAttribute="top" secondItem="auF-Rl-sn5" secondAttribute="top" constant="12" id="ahT-da-n1d"/>
+                                                <constraint firstItem="xHK-mO-8bg" firstAttribute="top" secondItem="zJJ-2r-XGd" secondAttribute="bottom" constant="10" id="ayt-AT-zIC"/>
+                                                <constraint firstItem="xHK-mO-8bg" firstAttribute="leading" secondItem="auF-Rl-sn5" secondAttribute="leading" constant="20" id="hxk-CQ-Dsz"/>
+                                                <constraint firstAttribute="trailing" secondItem="xHK-mO-8bg" secondAttribute="trailing" constant="20" id="iJg-8k-Ls5"/>
+                                                <constraint firstItem="zJJ-2r-XGd" firstAttribute="leading" secondItem="auF-Rl-sn5" secondAttribute="leading" constant="20" id="j49-cE-iLL"/>
+                                                <constraint firstAttribute="height" constant="145" id="noP-4e-TNu"/>
+                                                <constraint firstItem="yiK-P2-B9D" firstAttribute="leading" secondItem="auF-Rl-sn5" secondAttribute="leading" constant="20" id="yW1-wb-Qtm"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LiU-ej-Z0g" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiU-ej-Z0g" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="1028" width="335" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3V-N4-9ky">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1219,15 +1333,21 @@
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="0.096372003420000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="flm-Wr-psR"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="12"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-DQ-i1a">
-                                            <rect key="frame" x="121" y="1180" width="132" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-DQ-i1a">
+                                            <rect key="frame" x="121.66666666666669" y="1180" width="132" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="QtW-tj-TE5"/>
+                                                <constraint firstAttribute="width" constant="132" id="t6p-bO-pPT"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal" title="REMOVE THIS DEAL">
                                                 <color key="titleColor" red="1" green="0.36862745099999999" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1235,6 +1355,38 @@
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="ZS6-fA-SFm" firstAttribute="top" secondItem="wb8-oO-WNv" secondAttribute="bottom" constant="11" id="00e-o3-n8q"/>
+                                        <constraint firstItem="Zht-DQ-i1a" firstAttribute="centerX" secondItem="EwD-Oo-8jf" secondAttribute="centerX" id="2S9-wF-TwA"/>
+                                        <constraint firstAttribute="trailing" secondItem="auF-Rl-sn5" secondAttribute="trailing" constant="20" id="4Db-Xv-gur"/>
+                                        <constraint firstItem="voz-Yz-m6P" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="8Nh-kN-JZA"/>
+                                        <constraint firstAttribute="trailing" secondItem="6qR-fh-j7h" secondAttribute="trailing" constant="20" id="8vw-0f-3Zb"/>
+                                        <constraint firstItem="aZr-eq-H0n" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="Dpb-sq-V9f"/>
+                                        <constraint firstItem="LiU-ej-Z0g" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="Jm0-zT-FPA"/>
+                                        <constraint firstItem="wle-cw-j9J" firstAttribute="top" secondItem="ZS6-fA-SFm" secondAttribute="bottom" constant="10" id="Krp-3K-H8T"/>
+                                        <constraint firstItem="auF-Rl-sn5" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="Lgn-pi-Mpo"/>
+                                        <constraint firstItem="6qR-fh-j7h" firstAttribute="top" secondItem="aZr-eq-H0n" secondAttribute="bottom" constant="10" id="LkE-hK-7BX"/>
+                                        <constraint firstItem="4kr-zn-u8K" firstAttribute="top" secondItem="EwD-Oo-8jf" secondAttribute="top" constant="10" id="QS2-9I-WxN"/>
+                                        <constraint firstAttribute="trailing" secondItem="wb8-oO-WNv" secondAttribute="trailing" constant="20" id="Sau-vy-Dut"/>
+                                        <constraint firstItem="LiU-ej-Z0g" firstAttribute="top" secondItem="auF-Rl-sn5" secondAttribute="bottom" constant="10" id="Sb2-aK-KFt"/>
+                                        <constraint firstItem="Zht-DQ-i1a" firstAttribute="top" secondItem="LiU-ej-Z0g" secondAttribute="bottom" constant="24" id="UlU-Qg-DRg"/>
+                                        <constraint firstItem="auF-Rl-sn5" firstAttribute="top" secondItem="wle-cw-j9J" secondAttribute="bottom" constant="10" id="UsB-Fh-iNX"/>
+                                        <constraint firstItem="aZr-eq-H0n" firstAttribute="top" secondItem="voz-Yz-m6P" secondAttribute="bottom" constant="10" id="XBB-sv-QEv"/>
+                                        <constraint firstAttribute="trailing" secondItem="LiU-ej-Z0g" secondAttribute="trailing" constant="20" id="XJx-Od-we6"/>
+                                        <constraint firstItem="4kr-zn-u8K" firstAttribute="centerX" secondItem="EwD-Oo-8jf" secondAttribute="centerX" id="ZCX-WL-M2x"/>
+                                        <constraint firstAttribute="trailing" secondItem="wle-cw-j9J" secondAttribute="trailing" constant="20" id="a2o-dC-T2l"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZS6-fA-SFm" secondAttribute="trailing" constant="20" id="aJk-uy-1vy"/>
+                                        <constraint firstItem="wle-cw-j9J" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="eje-ac-k6i"/>
+                                        <constraint firstItem="j4R-Gv-AxG" firstAttribute="top" secondItem="6qR-fh-j7h" secondAttribute="bottom" constant="10" id="ezM-cI-PVJ"/>
+                                        <constraint firstItem="wb8-oO-WNv" firstAttribute="top" secondItem="j4R-Gv-AxG" secondAttribute="bottom" constant="10" id="g9r-Eh-xQR"/>
+                                        <constraint firstAttribute="trailing" secondItem="j4R-Gv-AxG" secondAttribute="trailing" constant="20" id="gSG-7E-ott"/>
+                                        <constraint firstItem="wb8-oO-WNv" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="ged-y5-l6Q"/>
+                                        <constraint firstItem="ZS6-fA-SFm" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="ndK-to-agq"/>
+                                        <constraint firstAttribute="trailing" secondItem="aZr-eq-H0n" secondAttribute="trailing" constant="20" id="oxg-eY-ONM"/>
+                                        <constraint firstItem="voz-Yz-m6P" firstAttribute="top" secondItem="4kr-zn-u8K" secondAttribute="bottom" constant="10" id="tcB-Ql-r86"/>
+                                        <constraint firstItem="j4R-Gv-AxG" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="tlk-tj-KrJ"/>
+                                        <constraint firstItem="6qR-fh-j7h" firstAttribute="leading" secondItem="EwD-Oo-8jf" secondAttribute="leading" constant="20" id="xiY-91-7v5"/>
+                                    </constraints>
                                 </view>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UuM-Fp-Zsk">
