@@ -20,7 +20,10 @@ class DealVC: BaseVC {
         bottomMenuBtn.addShadowEffect()
     }
     
-
+    @IBAction func downBtnAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

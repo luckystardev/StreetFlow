@@ -482,7 +482,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.9137254901960784" green="0.96470588235294119" blue="1" alpha="0.6993257705479452" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.96470588235294119" blue="1" alpha="0.69849636130136983" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Y6g-wl-5BW" firstAttribute="leading" secondItem="n3h-xz-G7r" secondAttribute="leading" constant="20" id="3Kr-pV-GgA"/>
@@ -770,6 +770,9 @@
                                                 <constraint firstAttribute="width" constant="55" id="QMb-Rx-taE"/>
                                             </constraints>
                                             <state key="normal" backgroundImage="bt_down"/>
+                                            <connections>
+                                                <action selector="downBtnAction:" destination="pT2-gb-2cq" eventType="touchUpInside" id="yzh-L1-vqL"/>
+                                            </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voz-Yz-m6P" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="50" width="150" height="30"/>
@@ -1443,7 +1446,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.91372549020000005" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JiS-0k-NVx" firstAttribute="trailing" secondItem="2KY-ze-VlM" secondAttribute="trailing" id="5Fe-CD-SgO"/>
                             <constraint firstItem="2KY-ze-VlM" firstAttribute="bottom" secondItem="UuM-Fp-Zsk" secondAttribute="bottom" constant="13" id="GjQ-A5-joS"/>
@@ -1547,7 +1550,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.9137254901960784" green="0.96470588235294119" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91372549020000005" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FNy-Ay-bCJ" firstAttribute="top" secondItem="5Xo-bU-TSJ" secondAttribute="top" constant="60" id="O8s-Bk-eFr"/>
                             <constraint firstItem="5Xo-bU-TSJ" firstAttribute="bottom" secondItem="FNy-Ay-bCJ" secondAttribute="bottom" constant="78" id="Wjr-Rz-FUn"/>
@@ -1827,7 +1830,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.91372549020000005" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AhD-jX-IRs" firstAttribute="trailing" secondItem="kjq-0X-sEK" secondAttribute="trailing" constant="20" id="01q-WG-xTE"/>
                             <constraint firstItem="gQ7-Ja-8wm" firstAttribute="leading" secondItem="AhD-jX-IRs" secondAttribute="leading" constant="20" id="1w4-Lp-19N"/>
