@@ -15,13 +15,15 @@ class SearchVC: BaseVC {
     @IBOutlet weak var locationView: RoundView!
     @IBOutlet weak var searchFld: UITextField!
     @IBOutlet weak var bottomMenuBtn: UIButton!
+    
+    @IBOutlet weak var bottomViewConst: NSLayoutConstraint!
     var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         self.searchFld.becomeFirstResponder()
     }
     
@@ -35,15 +37,17 @@ class SearchVC: BaseVC {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
+            if bottomViewConst.constant == 0 {
+                bottomViewConst.constant = keyboardSize.height + 10
+                self.view.layoutIfNeeded()
             }
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+        if bottomViewConst.constant != 0 {
+            bottomViewConst.constant = 0
+            self.view.layoutIfNeeded()
         }
     }
 }

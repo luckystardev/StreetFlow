@@ -549,7 +549,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="122" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LSm-n9-rOt">
-                                <rect key="frame" x="0.0" y="63" width="375" height="464"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="uo3-Qf-CZ2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
@@ -661,7 +661,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-Ei-jER">
-                                <rect key="frame" x="20" y="473" width="335" height="45"/>
+                                <rect key="frame" x="20" y="733" width="335" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-FJ-huZ" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
@@ -671,7 +671,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="search" textContentType="location"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="location"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="WwA-Xn-gad" id="saY-nZ-JKE"/>
                                                 </connections>
@@ -725,19 +725,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.9137254901960784" green="0.96470588235294119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LSm-n9-rOt" firstAttribute="top" secondItem="Z5o-iw-5aV" secondAttribute="top" constant="19" id="1LQ-jB-Wkf"/>
-                            <constraint firstItem="LSm-n9-rOt" firstAttribute="trailing" secondItem="Z5o-iw-5aV" secondAttribute="trailing" id="DcA-wU-rxv"/>
+                            <constraint firstItem="LSm-n9-rOt" firstAttribute="leading" secondItem="Z5o-iw-5aV" secondAttribute="leading" id="0GR-Kh-fIQ"/>
+                            <constraint firstItem="LSm-n9-rOt" firstAttribute="trailing" secondItem="Z5o-iw-5aV" secondAttribute="trailing" id="0bC-y5-058"/>
+                            <constraint firstItem="LSm-n9-rOt" firstAttribute="top" secondItem="Z5o-iw-5aV" secondAttribute="top" constant="12" id="DdK-ZP-wCA"/>
                             <constraint firstItem="ujD-Ei-jER" firstAttribute="leading" secondItem="Z5o-iw-5aV" secondAttribute="leading" constant="20" id="HJT-6y-4dM"/>
-                            <constraint firstItem="Z5o-iw-5aV" firstAttribute="bottom" secondItem="ujD-Ei-jER" secondAttribute="bottom" constant="260" id="dBd-6l-mRe"/>
-                            <constraint firstAttribute="bottom" secondItem="LSm-n9-rOt" secondAttribute="bottom" constant="285" id="hRa-2f-YTd"/>
+                            <constraint firstItem="ujD-Ei-jER" firstAttribute="top" secondItem="LSm-n9-rOt" secondAttribute="bottom" constant="10" id="ckc-g3-wc8"/>
+                            <constraint firstItem="Z5o-iw-5aV" firstAttribute="bottom" secondItem="ujD-Ei-jER" secondAttribute="bottom" id="dBd-6l-mRe"/>
                             <constraint firstItem="Z5o-iw-5aV" firstAttribute="trailing" secondItem="ujD-Ei-jER" secondAttribute="trailing" constant="20" id="utF-hA-loF"/>
-                            <constraint firstItem="LSm-n9-rOt" firstAttribute="leading" secondItem="Z5o-iw-5aV" secondAttribute="leading" id="zdh-pw-DlP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z5o-iw-5aV"/>
                     </view>
                     <connections>
                         <outlet property="bottomMenuBtn" destination="D7q-OK-cqh" id="51L-7f-SHq"/>
                         <outlet property="bottomView" destination="ujD-Ei-jER" id="Q6j-kw-Yi6"/>
+                        <outlet property="bottomViewConst" destination="dBd-6l-mRe" id="Ow3-GU-4ki"/>
                         <outlet property="locationView" destination="ypO-FJ-huZ" id="3Uz-uD-LLH"/>
                         <outlet property="searchFld" destination="dFm-59-O51" id="ZBz-RW-p93"/>
                         <outlet property="tableview" destination="LSm-n9-rOt" id="eVP-vG-S4c"/>
