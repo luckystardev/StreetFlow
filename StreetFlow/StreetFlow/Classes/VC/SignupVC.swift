@@ -17,31 +17,39 @@ class SignupVC: BaseVC {
     @IBOutlet weak var emailLbl: UITextField!
     @IBOutlet weak var pwdLbl: UITextField!
     @IBOutlet weak var forgotLbl: UILabel!
+    @IBOutlet weak var termsLbl: UILabel!
     @IBOutlet weak var bottomView: TopRoundView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let attributedString = NSMutableAttributedString(string: "Forgot ID or Password? Reset")
-        attributedString.addAttribute(.link, value: "Reset", range: NSRange(location: 23, length: 5))
-        forgotLbl.attributedText = attributedString
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.tapLabel))
-        forgotLbl.addGestureRecognizer(tap)
-        forgotLbl.isUserInteractionEnabled = true
-
+        applyAttributedString()
     }
     
-    @objc
-    func tapLabel(gesture: UITapGestureRecognizer) {
-        print("Tapped targetRange1")
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         bottomView.cornerRadious = 12
         bottomView.layoutIfNeeded()
+    }
+    
+    func applyAttributedString() {
+        let attributedString = NSMutableAttributedString(string: "Forgot ID or Password? Reset")
+        attributedString.addAttribute(.link, value: "Reset", range: NSRange(location: 23, length: 5))
+        forgotLbl.attributedText = attributedString
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(BaseVC.tapForgotLabel))
+        forgotLbl.addGestureRecognizer(tap)
+        forgotLbl.isUserInteractionEnabled = true
+        
+        let attributedString2 = NSMutableAttributedString(string: "By checking this box, you agree to our terms of service.")
+        attributedString2.addAttribute(.link, value: "terms of service.", range: NSRange(location: 39, length: 17))
+        termsLbl.attributedText = attributedString2
+        
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(BaseVC.tapTermsLabel))
+        termsLbl.addGestureRecognizer(tap2)
+        termsLbl.isUserInteractionEnabled = true
     }
     
     @IBAction func signupBtnAction(_ sender: Any) {
@@ -51,16 +59,7 @@ class SignupVC: BaseVC {
     @IBAction func loginBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
 
 extension SignupVC: UITextFieldDelegate {

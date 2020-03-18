@@ -15,6 +15,16 @@ class BaseVC: UIViewController {
 
     }
     
+    @objc
+    func tapForgotLabel(gesture: UITapGestureRecognizer) {
+        print("Tapped forgot label")
+    }
+    
+    @objc
+    func tapTermsLabel(gesture: UITapGestureRecognizer) {
+        print("Tapped terms label")
+    }
+    
     func goNextVCWithID(_ storyboardId: String) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardId)
         self.navigationController?.pushViewController(vc, animated: true)

@@ -19,18 +19,7 @@ class LoginVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let attributedString = NSMutableAttributedString(string: "Forgot ID or Password? Reset")
-        attributedString.addAttribute(.link, value: "Reset", range: NSRange(location: 23, length: 5))
-        forgotLbl.attributedText = attributedString
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.tapLabel))
-        forgotLbl.addGestureRecognizer(tap)
-        forgotLbl.isUserInteractionEnabled = true
-    }
-    
-    @objc
-    func tapLabel(gesture: UITapGestureRecognizer) {
-        print("Tapped targetRange1")
+        applyAttributedString()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +27,16 @@ class LoginVC: BaseVC {
         
         bottomView.cornerRadious = 12
         bottomView.layoutIfNeeded()
+    }
+    
+    func applyAttributedString() {
+        let attributedString = NSMutableAttributedString(string: "Forgot ID or Password? Reset")
+        attributedString.addAttribute(.link, value: "Reset", range: NSRange(location: 23, length: 5))
+        forgotLbl.attributedText = attributedString
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(BaseVC.tapForgotLabel))
+        forgotLbl.addGestureRecognizer(tap)
+        forgotLbl.isUserInteractionEnabled = true
     }
     
     @IBAction func loginBtnAction(_ sender: Any) {
