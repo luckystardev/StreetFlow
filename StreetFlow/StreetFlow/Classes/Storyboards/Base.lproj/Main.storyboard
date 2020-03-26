@@ -2263,6 +2263,10 @@
                     </view>
                     <connections>
                         <outlet property="bottomCloseBtn" destination="JAO-t7-9M2" id="cFK-nr-Sey"/>
+                        <outlet property="firstnameLbl" destination="Ypc-K2-S65" id="jF2-Gx-02c"/>
+                        <outlet property="fullnameLbl" destination="n3z-2o-lPh" id="knX-bO-zxf"/>
+                        <outlet property="lastnameLbl" destination="ls6-ee-2Ap" id="m2g-d4-XWr"/>
+                        <outlet property="phoneLbl" destination="5DJ-3j-w2B" id="7Mr-Pg-8hB"/>
                         <outlet property="selectLocationView" destination="sL5-kd-bVd" id="AGT-Vr-aja"/>
                     </connections>
                 </viewController>
