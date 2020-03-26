@@ -9,5 +9,6 @@ target 'StreetFlow' do
 pod 'MASegmentedControl'
 pod 'SwiftyPageController'
 pod 'Parse'
+pod 'JGProgressHUD'
 
 end

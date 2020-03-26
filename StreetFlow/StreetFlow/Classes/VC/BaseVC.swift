@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import JGProgressHUD
 
 class BaseVC: UIViewController {
 
@@ -36,6 +38,10 @@ class BaseVC: UIViewController {
             vc.modalPresentationStyle = .fullScreen
         }        
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    func backVC() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

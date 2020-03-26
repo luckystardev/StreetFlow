@@ -169,13 +169,13 @@
                                     <constraint firstItem="iOQ-hc-BUg" firstAttribute="leading" secondItem="lFO-wf-0s3" secondAttribute="leading" constant="27" id="MOx-zD-mpM"/>
                                     <constraint firstItem="OPC-Dh-Gt9" firstAttribute="top" secondItem="HSt-oo-W3c" secondAttribute="bottom" constant="18" id="SS2-zD-jpn"/>
                                     <constraint firstItem="MCr-qb-q7j" firstAttribute="leading" secondItem="lFO-wf-0s3" secondAttribute="leading" constant="27" id="UNq-Mf-xBE"/>
-                                    <constraint firstItem="JcR-U7-fi0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lFO-wf-0s3" secondAttribute="leading" constant="20" symbolic="YES" id="YST-48-fJQ"/>
+                                    <constraint firstItem="JcR-U7-fi0" firstAttribute="leading" secondItem="lFO-wf-0s3" secondAttribute="leading" constant="26" id="YST-48-fJQ"/>
                                     <constraint firstAttribute="trailing" secondItem="HSt-oo-W3c" secondAttribute="trailing" constant="27" id="daa-RL-s8a"/>
                                     <constraint firstItem="iOQ-hc-BUg" firstAttribute="top" secondItem="2qJ-Wu-U8H" secondAttribute="bottom" constant="18" id="hnh-lF-HON"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NWm-nD-bAo" secondAttribute="trailing" constant="20" symbolic="YES" id="jnl-Vi-2nw"/>
                                     <constraint firstAttribute="trailing" secondItem="MCr-qb-q7j" secondAttribute="trailing" constant="27" id="kir-Kq-ULt"/>
                                     <constraint firstItem="OPC-Dh-Gt9" firstAttribute="centerX" secondItem="lFO-wf-0s3" secondAttribute="centerX" id="lD0-kK-LsY"/>
-                                    <constraint firstAttribute="trailing" secondItem="JcR-U7-fi0" secondAttribute="trailing" constant="286" id="mcK-Zo-m8N"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JcR-U7-fi0" secondAttribute="trailing" constant="286" id="mcK-Zo-m8N"/>
                                     <constraint firstItem="MCr-qb-q7j" firstAttribute="top" secondItem="NWm-nD-bAo" secondAttribute="bottom" constant="8" id="os1-xg-QOY"/>
                                     <constraint firstAttribute="trailing" secondItem="L0t-kc-TYS" secondAttribute="trailing" constant="29" id="rUI-Rz-Tb1"/>
                                     <constraint firstAttribute="height" constant="434" id="rW0-17-Qxe"/>

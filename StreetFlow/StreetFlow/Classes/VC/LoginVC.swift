@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import JGProgressHUD
 
 class LoginVC: BaseVC {
 
@@ -40,11 +42,28 @@ class LoginVC: BaseVC {
     }
     
     @IBAction func loginBtnAction(_ sender: Any) {
-        self.goNextVCWithID("PageVC")
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Log in..."
+        hud.show(in: self.view)
+        
+        PFUser.logInWithUsername(inBackground: emailTxtFld.text!, password: pwdTxtFld.text!) { (user, error) in
+            hud.dismiss()
+            if user != nil {
+                self.goNextVCWithID("PageVC")
+            } else {
+                if let descrip = error?.localizedDescription{
+                    let hud2 = JGProgressHUD(style: .dark)
+                    hud2.textLabel.text = descrip
+                    hud2.indicatorView = JGProgressHUDErrorIndicatorView()
+                    hud2.show(in: self.view)
+                    hud2.dismiss(afterDelay: 2.0)
+                }
+            }
+        }
     }
     
     @IBAction func signupAction(_ sender: Any) {
-        //TODO
+        //No need this function
     }
 }
 

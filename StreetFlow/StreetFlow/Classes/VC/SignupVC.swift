@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import JGProgressHUD
 
 class SignupVC: BaseVC {
 
@@ -53,11 +55,36 @@ class SignupVC: BaseVC {
     }
     
     @IBAction func signupBtnAction(_ sender: Any) {
-        self.goNextVCWithID("PageVC")
+        let user = PFUser()
+        user.username = emailLbl.text
+        user.email = emailLbl.text
+        user.password = pwdLbl.text
+        user["first_name"] = firstnameLbl.text
+        user["last_name"] = lastnameLbl.text
+        user["phone"] = phoneLbl.text
+        user["company"] = companyLbl.text
+        print(user)
+        
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Sign up..."
+        hud.show(in: self.view)
+        
+        user.signUpInBackground { (success, error) in
+            hud.dismiss()
+            if success {
+                self.goNextVCWithID("PageVC")
+            } else {
+                let hud2 = JGProgressHUD(style: .dark)
+                hud2.textLabel.text = "Sign up error"
+                hud2.indicatorView = JGProgressHUDErrorIndicatorView()
+                hud2.show(in: self.view)
+                hud2.dismiss(afterDelay: 2.0)
+            }
+        }
     }
     
     @IBAction func loginBtnAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.backVC()
     }
     
 }

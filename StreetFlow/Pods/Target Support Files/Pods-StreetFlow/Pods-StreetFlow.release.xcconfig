@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts" "${PODS_CONFIGURATION_BUILD_DIR}/MASegmentedControl" "${PODS_CONFIGURATION_BUILD_DIR}/Parse" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyPageController"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts" "${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/MASegmentedControl" "${PODS_CONFIGURATION_BUILD_DIR}/Parse" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyPageController"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts/Bolts.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MASegmentedControl/MASegmentedControl.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyPageController/SwiftyPageController.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts/Bolts.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD/JGProgressHUD.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MASegmentedControl/MASegmentedControl.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyPageController/SwiftyPageController.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -l"sqlite3" -l"z" -framework "AudioToolbox" -framework "Bolts" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "MASegmentedControl" -framework "Parse" -framework "QuartzCore" -framework "Security" -framework "StoreKit" -framework "SwiftyPageController" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "Accounts" -weak_framework "Social"
+OTHER_LDFLAGS = $(inherited) -l"sqlite3" -l"z" -framework "AudioToolbox" -framework "Bolts" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "Foundation" -framework "JGProgressHUD" -framework "MASegmentedControl" -framework "Parse" -framework "QuartzCore" -framework "Security" -framework "StoreKit" -framework "SwiftyPageController" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "Accounts" -weak_framework "Social"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
