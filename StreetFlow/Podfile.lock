@@ -1,20 +1,30 @@
 PODS:
+  - Bolts/Tasks (1.9.0)
   - MASegmentedControl (0.0.3)
+  - Parse (1.17.3):
+    - Parse/Core (= 1.17.3)
+  - Parse/Core (1.17.3):
+    - Bolts/Tasks (~> 1.9)
   - SwiftyPageController (0.1.2)
 
 DEPENDENCIES:
   - MASegmentedControl
+  - Parse
   - SwiftyPageController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Bolts
     - MASegmentedControl
+    - Parse
     - SwiftyPageController
 
 SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   MASegmentedControl: 81aa9aa326e27e969ef44e34285bb400649497eb
+  Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
   SwiftyPageController: d077d0e1e609ced8c70d2109a445e5df55837b30
 
-PODFILE CHECKSUM: 06407e353648d00eda39e10fef0d50d3bad923ab
+PODFILE CHECKSUM: 1fe6f58782298f0cc8f51b0469ac0ae86569a429
 
 COCOAPODS: 1.6.1

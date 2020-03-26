@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import CoreLocation
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let locationManager = CLLocationManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = parse_applicationId
+            $0.clientKey = parse_clientKey
+            $0.server = parse_url
+        }
+        Parse.initialize(with: configuration)
+        
         return true
     }
 

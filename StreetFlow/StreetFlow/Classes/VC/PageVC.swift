@@ -70,7 +70,33 @@ class PageVC: BaseVC {
     }
     
     @IBAction func topMenuBtnAction(_ sender: UIButton) {
+//        let base_url: String! = "https://apis.estated.com/v4/property?token=cyoidbzD1vn0HwQsykSFLvLXKWVmFU&combined_address=,,NY 14624"
+        let url = URL(string: "https://apis.estated.com/v4/property?token=cyoidbzD1vn0HwQsykSFLvLXKWVmFU&combined_address=151%20Battle%20Green%20Dr,%20Rochester,%20NY%2014624")
+
+//        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+//            guard let data = data else { return }
+//            print(String(data: data, encoding: .utf8)!)
+//        }
+        guard let requestUrl = url else { fatalError() }
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                print("Response HTTP Status code: \(response.statusCode)")
+            }
+            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                print("Response data string:\n \(dataString)")
+            }
+        }
+
+
+        task.resume()
     }
     
     @IBAction func touchLocationFld(_ sender: Any) {

@@ -8,5 +8,6 @@ target 'StreetFlow' do
   # Pods for StreetFlow
 pod 'MASegmentedControl'
 pod 'SwiftyPageController'
+pod 'Parse'
 
 end
