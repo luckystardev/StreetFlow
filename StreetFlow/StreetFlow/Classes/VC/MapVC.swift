@@ -10,13 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapVC: BaseVC , MKMapViewDelegate{ //, CLLocationManagerDelegate
+class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
 
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var infoView: RoundView!
     @IBOutlet weak var popInfoView: RoundView!
     
-//    var locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +24,12 @@ class MapVC: BaseVC , MKMapViewDelegate{ //, CLLocationManagerDelegate
         infoView.addShadowEffect()
         popInfoView.addShadowEffect()
         
-//        if CLLocationManager.locationServicesEnabled() {
-//            locationManager.delegate = self
-//            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//            locationManager.startUpdatingLocation()
-//        }
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.distanceFilter = kCLDistanceFilterNone
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
         
         // This is test code
         let location = CLLocationCoordinate2D(latitude: 37.785834,
@@ -46,7 +47,6 @@ class MapVC: BaseVC , MKMapViewDelegate{ //, CLLocationManagerDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     func popupPropertyView() {
@@ -77,21 +77,21 @@ class MapVC: BaseVC , MKMapViewDelegate{ //, CLLocationManagerDelegate
     
     //MARK:- CLLocationManagerDelegate Methods
 
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let mUserLocation:CLLocation = locations[0] as CLLocation
-//
-//        let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
-//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-//        let mRegion = MKCoordinateRegion(center: center, span: span)
-//
-//        map.setRegion(mRegion, animated: true)
-//
-//        locationManager.stopUpdatingLocation()
-//    }
-//
-//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print("Error - locationManager: \(error.localizedDescription)")
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let mUserLocation:CLLocation = locations[0] as CLLocation
+
+        let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let mRegion = MKCoordinateRegion(center: center, span: span)
+
+        map.setRegion(mRegion, animated: true)
+
+        locationManager.stopUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error - locationManager: \(error.localizedDescription)")
+    }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {

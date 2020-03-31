@@ -70,7 +70,6 @@ class PageVC: BaseVC {
     }
     
     @IBAction func topMenuBtnAction(_ sender: UIButton) {
-//        let base_url: String! = "https://apis.estated.com/v4/property?token=cyoidbzD1vn0HwQsykSFLvLXKWVmFU&combined_address=,,NY 14624"
         let url = URL(string: "https://apis.estated.com/v4/property?token=cyoidbzD1vn0HwQsykSFLvLXKWVmFU&combined_address=151%20Battle%20Green%20Dr,%20Rochester,%20NY%2014624")
 
 //        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
