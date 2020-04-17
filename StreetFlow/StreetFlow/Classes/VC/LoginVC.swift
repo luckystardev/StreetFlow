@@ -23,10 +23,6 @@ class LoginVC: BaseVC {
 
         applyAttributedString()
         
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
         //This is test code
         emailTxtFld.text = "q@q.com"
         pwdTxtFld.text = "qwerqwer"
@@ -37,6 +33,9 @@ class LoginVC: BaseVC {
         
         bottomView.cornerRadious = 12
         bottomView.layoutIfNeeded()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)),
+        name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
