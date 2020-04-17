@@ -70,12 +70,9 @@ class PageVC: BaseVC {
     }
     
     @IBAction func topMenuBtnAction(_ sender: UIButton) {
+        /*
         let url = URL(string: "https://apis.estated.com/v4/property?token=cyoidbzD1vn0HwQsykSFLvLXKWVmFU&combined_address=151%20Battle%20Green%20Dr,%20Rochester,%20NY%2014624")
 
-//        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-//            guard let data = data else { return }
-//            print(String(data: data, encoding: .utf8)!)
-//        }
         guard let requestUrl = url else { fatalError() }
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
@@ -94,8 +91,7 @@ class PageVC: BaseVC {
             }
         }
 
-
-        task.resume()
+        task.resume() */
     }
     
     @IBAction func touchLocationFld(_ sender: Any) {
@@ -111,7 +107,6 @@ class PageVC: BaseVC {
             setupContainerController(containerController)
         }
     }
-    
 
 }
 
