@@ -28,6 +28,10 @@
 		A3A7DBF72420406800165766 /* Pods_StreetFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */; };
 		A3A7DBF82420406800165766 /* Pods_StreetFlow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3B3A234241B813800FE98C5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3A233241B813800FE98C5 /* BaseVC.swift */; };
+		A3E0A509244A5FDC00872AC2 /* CircularStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3E0A505244A5FDC00872AC2 /* CircularStd-Book.ttf */; };
+		A3E0A50A244A5FDC00872AC2 /* CircularStd-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3E0A506244A5FDC00872AC2 /* CircularStd-Black.ttf */; };
+		A3E0A50B244A5FDC00872AC2 /* CircularStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3E0A507244A5FDC00872AC2 /* CircularStd-Bold.ttf */; };
+		A3E0A50C244A5FDC00872AC2 /* CircularStd-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3E0A508244A5FDC00872AC2 /* CircularStd-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +70,10 @@
 		A3553B20241A3D6000A66339 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		A3553B22241A3D9E00A66339 /* DealVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealVC.swift; sourceTree = "<group>"; };
 		A3B3A233241B813800FE98C5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		A3E0A505244A5FDC00872AC2 /* CircularStd-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.ttf"; sourceTree = "<group>"; };
+		A3E0A506244A5FDC00872AC2 /* CircularStd-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.ttf"; sourceTree = "<group>"; };
+		A3E0A507244A5FDC00872AC2 /* CircularStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.ttf"; sourceTree = "<group>"; };
+		A3E0A508244A5FDC00872AC2 /* CircularStd-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Medium.ttf"; sourceTree = "<group>"; };
 		BAB35E315C2FAE051B0D24A4 /* Pods-StreetFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetFlow.debug.xcconfig"; path = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		C74610B6BD571F4A7FA3127E /* Pods_StreetFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC12F8F8C056A23912E76214 /* Pods-StreetFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetFlow.release.xcconfig"; path = "Target Support Files/Pods-StreetFlow/Pods-StreetFlow.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 		A32AB1BD2418CD0A00102FB2 /* StreetFlow */ = {
 			isa = PBXGroup;
 			children = (
+				A3E0A503244A5FDC00872AC2 /* Resources */,
 				A32AB1D32418D52A00102FB2 /* Libs */,
 				A32AB1D22418D52000102FB2 /* Classes */,
 				A32AB1C72418CD0D00102FB2 /* Assets.xcassets */,
@@ -185,6 +194,25 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		A3E0A503244A5FDC00872AC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A3E0A504244A5FDC00872AC2 /* font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3E0A504244A5FDC00872AC2 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				A3E0A505244A5FDC00872AC2 /* CircularStd-Book.ttf */,
+				A3E0A506244A5FDC00872AC2 /* CircularStd-Black.ttf */,
+				A3E0A507244A5FDC00872AC2 /* CircularStd-Bold.ttf */,
+				A3E0A508244A5FDC00872AC2 /* CircularStd-Medium.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		E8B4D91BD249D4FBADEEA67B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,9 +282,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E0A509244A5FDC00872AC2 /* CircularStd-Book.ttf in Resources */,
 				A32AB1CB2418CD0D00102FB2 /* LaunchScreen.storyboard in Resources */,
+				A3E0A50B244A5FDC00872AC2 /* CircularStd-Bold.ttf in Resources */,
+				A3E0A50C244A5FDC00872AC2 /* CircularStd-Medium.ttf in Resources */,
 				A32AB1C82418CD0D00102FB2 /* Assets.xcassets in Resources */,
 				A32AB1C62418CD0A00102FB2 /* Main.storyboard in Resources */,
+				A3E0A50A244A5FDC00872AC2 /* CircularStd-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
