@@ -32,7 +32,7 @@ class PageVC: BaseVC {
             viewTypeSegment.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
             viewTypeSegment.selectedTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             viewTypeSegment.thumbViewColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            viewTypeSegment.titlesFont = UIFont(name: "OpenSans-Semibold", size: 14)
+            viewTypeSegment.titlesFont = UIFont(name: "CircularStd-Bold", size: 14)
             viewTypeSegment.segmentedBackGroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6980950342)
         }
     }
