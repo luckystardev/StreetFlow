@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="CircularStd-Black.ttf">
+            <string>CircularStd-Black</string>
+        </array>
         <array key="CircularStd-Bold.ttf">
             <string>CircularStd-Bold</string>
         </array>
@@ -395,7 +398,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="lhu-WM-MIR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-Qh-HJ6" customClass="TopRoundView" customModule="StreetFlow" customModuleProvider="target">
@@ -1934,13 +1937,20 @@
                                                             <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLg-P2-cGE">
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLg-P2-cGE">
                                                             <rect key="frame" x="301" y="8" width="22" height="22"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="geZ-cD-MPK"/>
+                                                                <constraint firstAttribute="width" constant="22" id="v2c-Gd-JmA"/>
+                                                            </constraints>
                                                             <state key="normal" title="Button" image="bt_more"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gLg-P2-cGE" firstAttribute="top" secondItem="0PT-f6-Ggv" secondAttribute="top" constant="8" id="6BA-wN-roW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gLg-P2-cGE" secondAttribute="trailing" constant="12" id="o6n-OZ-xPn"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="14"/>
@@ -2001,16 +2011,16 @@
                                         <color key="tintColor" red="0.035294117649999998" green="0.074509803920000006" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emmy Homkins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3z-2o-lPh">
-                                        <rect key="frame" x="65" y="7" width="100" height="17"/>
+                                        <rect key="frame" x="65" y="7" width="103" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Black" family="Circular Std" pointSize="14"/>
                                         <color key="textColor" red="0.070588235294117646" green="0.15294117647058825" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Premium user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqI-9b-1J0">
-                                        <rect key="frame" x="65" y="26" width="89" height="17"/>
+                                        <rect key="frame" x="65" y="26" width="87" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                         <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2034,9 +2044,9 @@
                                 <rect key="frame" x="20" y="133" width="335" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIRST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGL-f8-mCc">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                         <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2048,7 +2058,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
                                         </subviews>
@@ -2081,9 +2091,9 @@
                                 <rect key="frame" x="20" y="222" width="335" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LAST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTC-PE-uK1">
-                                        <rect key="frame" x="0.0" y="0.0" width="79" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                         <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2095,7 +2105,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
                                         </subviews>
@@ -2128,9 +2138,9 @@
                                 <rect key="frame" x="20" y="311" width="335" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PHONE NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAm-cN-4ct">
-                                        <rect key="frame" x="0.0" y="0.0" width="111" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                         <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2142,7 +2152,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
@@ -2177,7 +2187,7 @@
                                     <constraint firstAttribute="width" constant="120" id="11R-I2-kzJ"/>
                                     <constraint firstAttribute="height" constant="50" id="zHW-YH-FpF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="12"/>
                                 <state key="normal" title="LOG OUT">
                                     <color key="titleColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -2188,7 +2198,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-0X-sEK">
                                 <rect key="frame" x="20" y="720" width="335" height="45"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sL5-kd-bVd" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sL5-kd-bVd" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
                                         <subviews>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select a location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbO-fL-cO3">
