@@ -11,6 +11,10 @@ import UIKit
 class ListCell: UITableViewCell {
 
     @IBOutlet weak var bgView: RoundView!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var streetLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

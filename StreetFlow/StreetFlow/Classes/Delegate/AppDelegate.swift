@@ -10,6 +10,8 @@ import UIKit
 import CoreLocation
 import Parse
 
+var es_data: NSDictionary!
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

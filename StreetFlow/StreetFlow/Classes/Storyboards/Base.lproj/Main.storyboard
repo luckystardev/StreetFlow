@@ -1080,7 +1080,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="addressLbl" destination="JD3-qM-Us0" id="8cU-kJ-lJN"/>
                                             <outlet property="bgView" destination="VtS-CM-aL1" id="6cv-Gh-h2T"/>
+                                            <outlet property="nameLbl" destination="jeP-RD-mQN" id="Q3G-fE-ERc"/>
+                                            <outlet property="streetLbl" destination="TrT-Xn-LWs" id="mpL-z3-YSK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1374,28 +1377,28 @@
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sale Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-fC-ka1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mortgage amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-fC-ka1">
                                                     <rect key="frame" x="20" y="36" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sale Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gem-lf-stt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lender Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gem-lf-stt">
                                                     <rect key="frame" x="185" y="36" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mar 25th, 2004" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld7-VX-scD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$240,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld7-VX-scD">
                                                     <rect key="frame" x="20" y="57" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$65,234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYg-Ar-OEP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AB Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYg-Ar-OEP">
                                                     <rect key="frame" x="185" y="57" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
@@ -1890,6 +1893,22 @@
                     </view>
                     <connections>
                         <outlet property="bottomMenuBtn" destination="gQy-Si-ReT" id="1SP-l2-htU"/>
+                        <outlet property="mort_assessedVale" destination="9FL-nR-blU" id="xTV-S8-gaq"/>
+                        <outlet property="mort_date" destination="Ld7-VX-scD" id="KHg-CM-Afa"/>
+                        <outlet property="mort_price" destination="RYg-Ar-OEP" id="3Lh-9Q-P0D"/>
+                        <outlet property="offerSent_type" destination="Q9i-9Y-9KX" id="1Dc-Od-1tb"/>
+                        <outlet property="owner_address" destination="NU1-Rg-0e5" id="Zhv-He-0yK"/>
+                        <outlet property="owner_name" destination="PpI-jx-bG0" id="3Qm-Ce-CCu"/>
+                        <outlet property="owner_street" destination="okE-10-3V9" id="o2Q-dJ-IYd"/>
+                        <outlet property="property_acreage" destination="oMj-YW-jht" id="kT8-NC-ulf"/>
+                        <outlet property="property_datebulit" destination="fD1-HW-3K8" id="HZB-t0-dBD"/>
+                        <outlet property="property_improve" destination="lat-SH-orK" id="Kao-FQ-aoU"/>
+                        <outlet property="property_land" destination="L34-YS-opn" id="6od-o2-LQk"/>
+                        <outlet property="property_square" destination="doa-ZK-wHZ" id="Dj3-QN-jKc"/>
+                        <outlet property="property_total" destination="Ve6-P3-1qt" id="Ut0-ZV-d5b"/>
+                        <outlet property="sale_date" destination="IVe-hG-c9n" id="Ywx-Ki-tz0"/>
+                        <outlet property="sale_price" destination="KcO-k5-RW6" id="7Y3-Ys-73u"/>
+                        <outlet property="school_district" destination="Fy1-pn-sqx" id="wxA-c4-iJI"/>
                         <outlet property="selectLocationView" destination="miN-Rs-faJ" id="8py-0B-ke6"/>
                     </connections>
                 </viewController>
@@ -1977,7 +1996,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="addressLbl" destination="U4x-4i-dCR" id="S6d-jA-xLA"/>
                                             <outlet property="bgView" destination="0PT-f6-Ggv" id="hiq-cU-GdF"/>
+                                            <outlet property="nameLbl" destination="JVV-Gc-d8W" id="fXB-PB-9gV"/>
+                                            <outlet property="streetLbl" destination="C9b-oC-gHy" id="r7d-Wx-eD4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

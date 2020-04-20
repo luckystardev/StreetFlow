@@ -11,10 +11,21 @@ import UIKit
 class ListVC: BaseVC {
     
     @IBOutlet weak var tableview: UITableView!
+    var info: [String : String?]?
+    var num = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        info = getbasicInfo()
+        if info?["name"] != "" {
+            num = 1
+            self.tableview.reloadData()
+        }        
     }
 
 }
@@ -22,12 +33,18 @@ class ListVC: BaseVC {
 extension ListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return num
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
-        
+        cell.nameLbl.text = info?["name"] ?? ""
+        cell.streetLbl.text = info?["formatted_street_address"] ?? ""
+        let city : String = (info?["city"] ?? "") ?? " "
+        let state : String = (info?["state"] ?? "") ?? " "
+        let zip_code : String = (info?["zip_code"] ?? "") ?? " "
+        let address : String = city + "," + state + " " + zip_code
+        cell.addressLbl.text = address
         return cell
     }
     

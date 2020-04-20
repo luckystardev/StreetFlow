@@ -105,7 +105,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     }
     
     func getEstatedInfo(_ address: String) {
-        let baseUrl = "https://apis.estated.com/v4/property?token=cyoidbzD1vn0HwQsykSFLvLXKWVmFU&combined_address="
+        let baseUrl = "https://apis.estated.com/v4/property?token=p1w0ToQ4IddhvDSQgaR37WDy7PWmxV&combined_address="
         let urlStr = baseUrl + address
         let urlString = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         print(urlString!)
@@ -124,8 +124,18 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
             if let response = response as? HTTPURLResponse {
                 print("Response HTTP Status code: \(response.statusCode)")
             }
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Response data string:\n \(dataString)")
+//            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+            if let data = data {
+//                print("Response data string:\n \(dataString)")
+                do {
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
+                        // Print out dictionary
+                        print(convertedJsonIntoDict)
+                        es_data = convertedJsonIntoDict
+                   }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
             }
         }
 
@@ -143,4 +153,9 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
             self.popupPropertyView()
 //        }
     }
+    
+    func estateDataToDictionary(_ data:Any) {
+        
+    }
 }
+
