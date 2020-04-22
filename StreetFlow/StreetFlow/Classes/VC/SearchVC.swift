@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class SearchVC: BaseVC {
 
@@ -18,6 +19,8 @@ class SearchVC: BaseVC {
     
     @IBOutlet weak var bottomViewConst: NSLayoutConstraint!
     var index = 0
+    var isSuccess = false
+    var info: [String : String?]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +57,35 @@ class SearchVC: BaseVC {
 
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.index = 2
-        self.tableview.reloadData()
+//        let hud = JGProgressHUD(style: .dark)
+//        hud.textLabel.text = ""
+//        hud.show(in: self.view)
+        
+        self.getEstatedInfo(textField.text!) { (flag, result) in
+//            hud.dismiss()
+            if !flag {
+                print("failed!!!")
+                DispatchQueue.main.async {
+                    let hud2 = JGProgressHUD(style: .dark)
+                    hud2.textLabel.text = result
+                    hud2.indicatorView = JGProgressHUDErrorIndicatorView()
+                    hud2.show(in: self.view)
+                    hud2.dismiss(afterDelay: 2.0)
+                }
+            } else {
+                print("success!!!")
+                self.isSuccess = true
+                DispatchQueue.main.async {
+                    self.info = self.getbasicInfo()
+                    if self.info?["name"] != "" {
+                        self.index = 1
+                        self.tableview.reloadData()
+                    }
+                }
+            }
+        }
+        
+        textField.resignFirstResponder()
         
         return true
     }
@@ -69,6 +99,13 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! ListCell
+        cell.nameLbl.text = info?["name"] ?? ""
+        cell.streetLbl.text = info?["formatted_street_address"] ?? ""
+        let city : String = (info?["city"] ?? "") ?? " "
+        let state : String = (info?["state"] ?? "") ?? " "
+        let zip_code : String = (info?["zip_code"] ?? "") ?? " "
+        let address : String = city + "," + state + " " + zip_code
+        cell.addressLbl.text = address
         
         return cell
     }

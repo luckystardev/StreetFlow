@@ -9,14 +9,20 @@
 import UIKit
 import MapKit
 import CoreLocation
+import JGProgressHUD
 
 class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
 
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var infoView: RoundView!
     @IBOutlet weak var popInfoView: RoundView!
+    @IBOutlet weak var infoLbl: UILabel!
+    @IBOutlet weak var popNameLbl: UILabel!
+    @IBOutlet weak var popStreetLbl: UILabel!
+    @IBOutlet weak var popAddressLbl: UILabel!
     
     var locationManager = CLLocationManager()
+    var isSuccess = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +56,18 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     }
     
     func popupPropertyView() {
+        var info: [String : String?]?
+        info = getbasicInfo()
+        if info?["name"] != "" {
+            popNameLbl.text = info?["name"] ?? ""
+            popStreetLbl.text = info?["formatted_street_address"] ?? ""
+            let city : String = (info?["city"] ?? "") ?? " "
+            let state : String = (info?["state"] ?? "") ?? " "
+            let zip_code : String = (info?["zip_code"] ?? "") ?? " "
+            let address : String = city + "," + state + " " + zip_code
+            popAddressLbl.text = address
+        }
+        
         infoView.isHidden = true
         popInfoView.isHidden = false
     }
@@ -60,7 +78,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     }
     
     @IBAction func dropDownBtnAction(_ sender: Any) {
-        dismissPropertyView()
+        popNextVCWithID("DealVC", isFull: false)
     }
     
     @IBAction func dismissBtnAction(_ sender: Any) {
@@ -72,12 +90,15 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     }
     
     @IBAction func tapPopInfoView(_ sender: Any) {
-        popNextVCWithID("DealVC", isFull: false)
+//        popNextVCWithID("DealVC", isFull: false)
     }
     
     //MARK:- CLLocationManagerDelegate Methods
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        locationManager.stopUpdatingLocation()
+        
         let mUserLocation:CLLocation = locations[0] as CLLocation
 
         let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
@@ -86,61 +107,45 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
 
         map.setRegion(mRegion, animated: true)
         
-        locationManager.stopUpdatingLocation()
-        
         let geocoder = CLGeocoder()
             
         // Look up the location and pass it to the completion handler
+                
         geocoder.reverseGeocodeLocation(mUserLocation,
                     completionHandler: { (placemarks, error) in
             if error == nil {
                 let firstLocation = placemarks?[0]
-                print(firstLocation as Any)
                 print("===============")
                 let placename: String = (firstLocation?.subThoroughfare)! + " " + (firstLocation?.thoroughfare)! + ", " + (firstLocation?.locality)! + ", " + (firstLocation?.administrativeArea)! + " " + (firstLocation?.postalCode)! //+ ", " + (firstLocation?.country)!
                 print(placename)
-                self.getEstatedInfo(placename)
+                self.getEstatedInfo(placename) { (flag, result) in
+                    if !flag {
+                        print("failed!!!")
+                        DispatchQueue.main.async {
+                            self.infoLbl.text = result
+                            
+                            let hud2 = JGProgressHUD(style: .dark)
+                            hud2.textLabel.text = result
+                            hud2.indicatorView = JGProgressHUDErrorIndicatorView()
+                            hud2.show(in: self.view)
+                            hud2.dismiss(afterDelay: 2.0)
+                        }
+                    } else {
+                        print("success!!!")
+                        DispatchQueue.main.async {
+                            self.infoLbl.text = "Tap on a property to pick"
+                            let newPin = MKPointAnnotation()
+                            newPin.coordinate = mUserLocation.coordinate
+                            self.map.addAnnotation(newPin)
+                        }
+                        self.isSuccess = true
+                    }
+                }
             }
         })
     }
     
-    func getEstatedInfo(_ address: String) {
-        let baseUrl = "https://apis.estated.com/v4/property?token=p1w0ToQ4IddhvDSQgaR37WDy7PWmxV&combined_address="
-        let urlStr = baseUrl + address
-        let urlString = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        print(urlString!)
-        
-        let url = URL(string:urlString!)
-        guard let requestUrl = url else { fatalError() }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error took place \(error)")
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                print("Response HTTP Status code: \(response.statusCode)")
-            }
-//            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-            if let data = data {
-//                print("Response data string:\n \(dataString)")
-                do {
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-                        // Print out dictionary
-                        print(convertedJsonIntoDict)
-                        es_data = convertedJsonIntoDict
-                   }
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-
-        task.resume()
-    }
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error - locationManager: \(error.localizedDescription)")
@@ -150,8 +155,11 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     {
 //        if let annotationTitle = view.annotation?.title
 //        {
-            self.popupPropertyView()
+//            self.popupPropertyView()
 //        }
+        if self.isSuccess {
+            self.popupPropertyView()
+        }
     }
     
     func estateDataToDictionary(_ data:Any) {

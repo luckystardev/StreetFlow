@@ -297,7 +297,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.40784313725490196" green="0.50980392156862742" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" textContentType="street-address"/>
                                                 <connections>
                                                     <action selector="touchLocationFld:" destination="y5A-nt-5YI" eventType="editingDidBegin" id="zlD-ES-WzV"/>
                                                     <outlet property="delegate" destination="y5A-nt-5YI" id="QHl-wQ-7Lc"/>
@@ -592,7 +592,7 @@
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IjW-0i-WSa">
                                                             <rect key="frame" x="26" y="155" width="17" height="17"/>
-                                                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="0aA-bV-kaY"/>
                                                                 <constraint firstAttribute="width" constant="17" id="pge-Hb-TYS"/>
@@ -790,7 +790,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fP-hA-dKu">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9fP-hA-dKu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <connections>
                                     <outlet property="delegate" destination="eHY-Wg-6yQ" id="Zx6-mA-qHC"/>
@@ -799,14 +799,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCn-9q-p7Z" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                 <rect key="frame" x="20" y="675" width="335" height="35"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="im_info" translatesAutoresizingMaskIntoConstraints="NO" id="CeI-wz-AG5">
-                                        <rect key="frame" x="12" y="10.666666666666666" width="14" height="14"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="im_info" translatesAutoresizingMaskIntoConstraints="NO" id="CeI-wz-AG5">
+                                        <rect key="frame" x="12" y="10.666666666666629" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="6OU-Dx-zJa"/>
+                                            <constraint firstAttribute="width" constant="14" id="M3I-vJ-kyv"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap on a property to pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHB-QV-em9">
-                                        <rect key="frame" x="36" y="9" width="162" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on a property to pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHB-QV-em9">
+                                        <rect key="frame" x="36" y="9" width="291" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="nZK-aj-kic"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                         <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -814,6 +819,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="19o-tW-D5S"/>
+                                    <constraint firstItem="vHB-QV-em9" firstAttribute="leading" secondItem="CeI-wz-AG5" secondAttribute="trailing" constant="10" id="HPh-zB-OlF"/>
+                                    <constraint firstItem="vHB-QV-em9" firstAttribute="top" secondItem="BCn-9q-p7Z" secondAttribute="top" constant="9" id="PIY-zY-P26"/>
+                                    <constraint firstItem="CeI-wz-AG5" firstAttribute="top" secondItem="BCn-9q-p7Z" secondAttribute="top" constant="10.67" id="UKm-WR-WV4"/>
+                                    <constraint firstItem="CeI-wz-AG5" firstAttribute="leading" secondItem="BCn-9q-p7Z" secondAttribute="leading" constant="12" id="Wwz-gZ-ZIE"/>
+                                    <constraint firstAttribute="trailing" secondItem="vHB-QV-em9" secondAttribute="trailing" constant="8" id="cCS-pR-1z7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -947,9 +957,13 @@
                         <viewLayoutGuide key="safeArea" id="gBr-ev-efC"/>
                     </view>
                     <connections>
+                        <outlet property="infoLbl" destination="vHB-QV-em9" id="wAv-Vn-0cO"/>
                         <outlet property="infoView" destination="BCn-9q-p7Z" id="Hhh-dW-z1E"/>
                         <outlet property="map" destination="9fP-hA-dKu" id="ThR-Vn-JZ0"/>
+                        <outlet property="popAddressLbl" destination="0Hp-tq-Qfs" id="Elo-i4-EDB"/>
                         <outlet property="popInfoView" destination="n3h-xz-G7r" id="Dzv-Gl-TJ8"/>
+                        <outlet property="popNameLbl" destination="7kW-fZ-f9Q" id="WNN-kX-POw"/>
+                        <outlet property="popStreetLbl" destination="iMC-lJ-vUq" id="08x-cj-aBJ"/>
                         <segue destination="WwA-Xn-gad" kind="presentation" modalPresentationStyle="fullScreen" id="F8E-fo-xFQ"/>
                     </connections>
                 </viewController>
@@ -960,7 +974,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1073" y="840"/>
+            <point key="canvasLocation" x="1072.8" y="839.40886699507394"/>
         </scene>
         <!--SearchVC-->
         <scene sceneID="Mrr-a7-o8c">
@@ -1103,7 +1117,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="location"/>
+                                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="WwA-Xn-gad" id="saY-nZ-JKE"/>
                                                 </connections>
@@ -2106,7 +2120,7 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -2153,7 +2167,7 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -2200,7 +2214,7 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>

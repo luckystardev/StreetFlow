@@ -44,6 +44,64 @@ class BaseVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func getEstatedInfo(_ address: String, completion: @escaping (_ flag: Bool, _ result: String) ->()) {
+        let baseUrl = "https://apis.estated.com/v4/property?token=p1w0ToQ4IddhvDSQgaR37WDy7PWmxV&combined_address="
+        let urlStr = baseUrl + address
+        let urlString = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        print(urlString!)
+        
+        let url = URL(string:urlString!)
+        guard let requestUrl = url else { fatalError() }
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                print("Response HTTP Status code: \(response.statusCode)")
+            }
+//            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+            if let data = data {
+//                print("Response data string:\n \(dataString)")
+                do {
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
+//                        print(convertedJsonIntoDict)
+                        es_data = convertedJsonIntoDict
+                        if es_data != nil {
+                             if let warnings = es_data["warnings"] as? Array<Any> {
+                                if let wf = warnings.first as? NSDictionary {
+                                    if let description = wf["description"] as? String {
+                                     completion(false, description)
+                                    }
+                                } else {
+                                   completion(true, "")
+                                }
+                             } else if let err = es_data["error"] as? NSDictionary {
+                                    if let description = err["description"] as? String {
+                                        completion(false, description)
+                                    }else {
+                                        completion(true, "")
+                                    }
+                             } else {
+                                completion(true, "")
+                            }
+                        }
+                        
+                   }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                    completion(false, error.localizedDescription)
+                }
+            }
+        }
+
+        task.resume()
+    }
+    
     func getbasicInfo() -> [String : String?] {
         if es_data != nil {
              if let data = es_data["data"] as? NSDictionary {
