@@ -1026,7 +1026,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="122" id="lXV-Ky-iHi" customClass="ListCell" customModule="StreetFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="122" id="lXV-Ky-iHi" customClass="ListCell" customModule="StreetFlow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="125" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lXV-Ky-iHi" id="YPe-8L-KTy">
@@ -1282,21 +1282,26 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaR-Bs-DXY" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="100" width="335" height="51"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOk-s0-kTV">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOk-s0-kTV">
                                                             <rect key="frame" x="10" y="10" width="35" height="35"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="35" id="G7w-7A-ey4"/>
+                                                                <constraint firstAttribute="height" constant="35" id="RNZ-8y-Eaf"/>
+                                                            </constraints>
                                                             <state key="normal" title="Button" image="bt_chat"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enhanced Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOx-Fz-2yJ">
-                                                            <rect key="frame" x="56" y="7" width="271" height="17"/>
+                                                            <rect key="frame" x="55" y="7" width="271" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="CircularStd-Black" family="Circular Std" pointSize="14"/>
                                                             <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Phone, email &amp; Additional Info." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDz-rj-YBK">
-                                                            <rect key="frame" x="56" y="27" width="271" height="17"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Phone, email &amp; Additional Info." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="EDz-rj-YBK">
+                                                            <rect key="frame" x="55" y="27" width="272" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="t09-Np-l8Y"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                             <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1305,6 +1310,11 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="51" id="0NH-hT-Bim"/>
+                                                        <constraint firstItem="EDz-rj-YBK" firstAttribute="leading" secondItem="UOk-s0-kTV" secondAttribute="trailing" constant="10" id="474-Ho-97m"/>
+                                                        <constraint firstItem="UOk-s0-kTV" firstAttribute="top" secondItem="AaR-Bs-DXY" secondAttribute="top" constant="10" id="6RO-Ww-KJK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EDz-rj-YBK" secondAttribute="trailing" constant="8" id="I8T-ve-t0i"/>
+                                                        <constraint firstAttribute="bottom" secondItem="EDz-rj-YBK" secondAttribute="bottom" constant="7" id="Ivt-f0-2wG"/>
+                                                        <constraint firstItem="UOk-s0-kTV" firstAttribute="leading" secondItem="AaR-Bs-DXY" secondAttribute="leading" constant="10" id="o8V-SO-s8F"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1350,7 +1360,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sale Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPa-cs-qpE">
-                                                    <rect key="frame" x="185" y="36" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="36" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1364,7 +1374,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$65,234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcO-k5-RW6">
-                                                    <rect key="frame" x="185" y="57" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="57" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1399,7 +1409,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lender Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gem-lf-stt">
-                                                    <rect key="frame" x="185" y="36" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="36" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1412,8 +1422,8 @@
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AB Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYg-Ar-OEP">
-                                                    <rect key="frame" x="185" y="57" width="150" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AB Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="RYg-Ar-OEP">
+                                                    <rect key="frame" x="170" y="57" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1462,7 +1472,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Land Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghi-BN-r0H">
-                                                    <rect key="frame" x="185" y="36" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="36" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1476,7 +1486,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$16,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L34-YS-opn">
-                                                    <rect key="frame" x="185" y="57" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="57" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1490,7 +1500,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year Built" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-Wp-jme">
-                                                    <rect key="frame" x="185" y="84" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="84" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1504,7 +1514,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1952" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD1-HW-3K8">
-                                                    <rect key="frame" x="185" y="104" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="104" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1518,7 +1528,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acreage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVC-dn-t7k">
-                                                    <rect key="frame" x="185" y="131" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="131" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1532,7 +1542,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.92" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMj-YW-jht">
-                                                    <rect key="frame" x="185" y="151" width="150" height="17"/>
+                                                    <rect key="frame" x="170" y="151" width="150" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1760,17 +1770,22 @@
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A lead that you have sent an official offer to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9i-9Y-9KX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A lead that you have sent an official offer to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Q9i-9Y-9KX">
                                                     <rect key="frame" x="20" y="57" width="307" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="LMn-iL-txu"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfX-WS-8xf" customClass="RoundButton" customModule="StreetFlow" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfX-WS-8xf" customClass="RoundButton" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="84" width="120" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Yyi-aT-Mae"/>
+                                                        <constraint firstAttribute="width" constant="120" id="uJD-K7-BQX"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <state key="normal" title="Change">
                                                         <color key="titleColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1784,7 +1799,12 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="0.096372003420000005" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="FfX-WS-8xf" secondAttribute="bottom" constant="14" id="9RY-SR-fx2"/>
+                                                <constraint firstItem="FfX-WS-8xf" firstAttribute="top" secondItem="Q9i-9Y-9KX" secondAttribute="bottom" constant="10" id="eO3-PZ-tkN"/>
                                                 <constraint firstAttribute="height" constant="128" id="flm-Wr-psR"/>
+                                                <constraint firstItem="Q9i-9Y-9KX" firstAttribute="leading" secondItem="LiU-ej-Z0g" secondAttribute="leading" constant="20" id="hzE-aM-agv"/>
+                                                <constraint firstItem="FfX-WS-8xf" firstAttribute="leading" secondItem="LiU-ej-Z0g" secondAttribute="leading" constant="20" id="laE-Rr-Mdj"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q9i-9Y-9KX" secondAttribute="trailing" constant="8" id="p94-Qo-e9o"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

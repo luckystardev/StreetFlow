@@ -21,8 +21,8 @@ class DealVC: BaseVC {
     @IBOutlet weak var sale_date: UILabel!
     @IBOutlet weak var sale_price: UILabel!
     //mortgage information
-    @IBOutlet weak var mort_date: UILabel! //leander name
-    @IBOutlet weak var mort_price: UILabel! // amount
+    @IBOutlet weak var mort_date: UILabel! // amount
+    @IBOutlet weak var mort_price: UILabel! // leander name
     @IBOutlet weak var mort_assessedVale: UILabel!
     //property info
     @IBOutlet weak var property_improve: UILabel!
@@ -78,8 +78,8 @@ class DealVC: BaseVC {
                         sale_price.text = "$\(String(describing: deedf["sale_price"]!))"
                     }
                     if let deedl = deeds.last as? NSDictionary {
-                        mort_date.text = deedl["lender_name"] as? String
-                        mort_price.text = "$\(String(describing: deedl["loan_amount"]!))"
+                        mort_date.text = "$\(String(describing: deedl["loan_amount"]!))"
+                        mort_price.text = deedl["lender_name"] as? String                       
                     }
                 }
             }

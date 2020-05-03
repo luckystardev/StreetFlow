@@ -64,6 +64,8 @@
 		<string>CircularStd-Bold.ttf</string>
 		<string>CircularStd-Medium.ttf</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
