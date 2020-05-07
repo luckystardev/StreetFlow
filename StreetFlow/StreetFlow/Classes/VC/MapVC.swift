@@ -59,12 +59,14 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
         var info: [String : String?]?
         info = getbasicInfo()
         if info?["name"] != "" {
-            popNameLbl.text = info?["name"] ?? ""
+            var ownerStr = info?["name"] ?? ""
+            ownerStr = ownerStr?.replacingOccurrences(of: ";", with: ", ")
+            popNameLbl.text = ownerStr
             popStreetLbl.text = info?["formatted_street_address"] ?? ""
             let city : String = (info?["city"] ?? "") ?? " "
             let state : String = (info?["state"] ?? "") ?? " "
             let zip_code : String = (info?["zip_code"] ?? "") ?? " "
-            let address : String = city + "," + state + " " + zip_code
+            let address : String = city + ", " + state + " " + zip_code
             popAddressLbl.text = address
         }
         
