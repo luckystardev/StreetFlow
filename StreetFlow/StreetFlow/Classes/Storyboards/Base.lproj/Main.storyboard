@@ -1688,6 +1688,7 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="VvP-VA-KKD"/>
                                                     </constraints>
@@ -1702,6 +1703,9 @@
                                                             <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="1tI-UP-xO8" appends="YES" id="ZM7-oJ-5SK"/>
+                                                    </connections>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHK-mO-8bg" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="86" width="295" height="40"/>
@@ -1719,6 +1723,7 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="h26-67-NgR"/>
                                                     </constraints>
@@ -1733,6 +1738,9 @@
                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="sGa-QH-w5g" appends="YES" id="qwg-1H-qPN"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1795,6 +1803,9 @@
                                                             <real key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="offerChangeAction:" destination="pT2-gb-2cq" eventType="touchUpInside" id="cQx-F6-8gO"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="0.096372003420000005" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1927,13 +1938,16 @@
                     </view>
                     <connections>
                         <outlet property="bottomMenuBtn" destination="gQy-Si-ReT" id="1SP-l2-htU"/>
+                        <outlet property="emailLbl" destination="yKE-NS-ujF" id="QLW-ej-NwN"/>
                         <outlet property="mort_assessedVale" destination="9FL-nR-blU" id="xTV-S8-gaq"/>
                         <outlet property="mort_date" destination="Ld7-VX-scD" id="KHg-CM-Afa"/>
                         <outlet property="mort_price" destination="RYg-Ar-OEP" id="3Lh-9Q-P0D"/>
-                        <outlet property="offerSent_type" destination="Q9i-9Y-9KX" id="1Dc-Od-1tb"/>
+                        <outlet property="offer_detail" destination="Q9i-9Y-9KX" id="jvO-j5-a0j"/>
+                        <outlet property="offer_type" destination="R4X-sk-r4Z" id="JSM-mg-oyU"/>
                         <outlet property="owner_address" destination="NU1-Rg-0e5" id="Zhv-He-0yK"/>
                         <outlet property="owner_name" destination="PpI-jx-bG0" id="3Qm-Ce-CCu"/>
                         <outlet property="owner_street" destination="okE-10-3V9" id="o2Q-dJ-IYd"/>
+                        <outlet property="phoneLbl" destination="hMj-Gt-8Tt" id="XFa-KN-pwm"/>
                         <outlet property="property_acreage" destination="oMj-YW-jht" id="kT8-NC-ulf"/>
                         <outlet property="property_datebulit" destination="fD1-HW-3K8" id="HZB-t0-dBD"/>
                         <outlet property="property_improve" destination="lat-SH-orK" id="Kao-FQ-aoU"/>
@@ -1944,9 +1958,20 @@
                         <outlet property="sale_price" destination="KcO-k5-RW6" id="7Y3-Ys-73u"/>
                         <outlet property="school_district" destination="Fy1-pn-sqx" id="wxA-c4-iJI"/>
                         <outlet property="selectLocationView" destination="miN-Rs-faJ" id="8py-0B-ke6"/>
+                        <outlet property="tagView" destination="wle-cw-j9J" id="GE8-hV-Cg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBB-qY-Obs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1tI-UP-xO8">
+                    <connections>
+                        <action selector="addPhoneAction:" destination="pT2-gb-2cq" id="2zN-yv-yre"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="sGa-QH-w5g">
+                    <connections>
+                        <action selector="addEmailAction:" destination="pT2-gb-2cq" id="krb-qM-jRc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1801" y="1569"/>
         </scene>

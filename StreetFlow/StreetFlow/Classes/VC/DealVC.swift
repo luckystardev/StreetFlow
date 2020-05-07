@@ -33,8 +33,13 @@ class DealVC: BaseVC {
     @IBOutlet weak var property_acreage: UILabel!
     //school district
     @IBOutlet weak var school_district: UILabel!
+    
     //offer sent
-    @IBOutlet weak var offerSent_type: UILabel!
+    @IBOutlet weak var offer_type: UILabel!
+    @IBOutlet weak var offer_detail: UILabel!
+    @IBOutlet weak var phoneLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var tagView: RoundView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +95,82 @@ class DealVC: BaseVC {
     
     @IBAction func downBtnAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func offerChangeAction(_ sender: Any) {
+        let str1 = "Not Connected Yet"
+        let str2 = "Contacted Owner"
+        let str3 = "Offer Sent"
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        let firstAction = UIAlertAction(title: str1, style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            self.offer_type.text = str1
+        })
+        let secondAction = UIAlertAction(title: str2, style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            self.offer_type.text = str2
+        })
+        let thirdAction = UIAlertAction(title: str3, style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            self.offer_type.text = str3
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        optionMenu.addAction(firstAction)
+        optionMenu.addAction(secondAction)
+        optionMenu.addAction(thirdAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    @IBAction func addPhoneAction(_ sender: Any) {
+        let placeTxt = "+ Add Phone Number"
+        let ac = UIAlertController(title: "Enter Phone number", message: nil, preferredStyle: .alert)
+        ac.addTextField() { newTextField in
+            newTextField.keyboardType = .namePhonePad
+            newTextField.placeholder = "Enter Phone Number"
+            if self.phoneLbl.text != placeTxt {
+                newTextField.text = self.phoneLbl.text
+            }
+        }
+        let submitAction = UIAlertAction(title: "OK", style: .default) { [unowned ac] _ in
+            let answer = ac.textFields![0]
+            // do something interesting with "answer" here
+            if self.phoneLbl.text != "" {
+                self.phoneLbl.text = answer.text
+            }
+        }
+
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
+    
+    @IBAction func addEmailAction(_ sender: Any) {
+        let placeTxt = "+ Add Email Address"
+        let ac = UIAlertController(title: "Enter Email Address", message: nil, preferredStyle: .alert)
+        ac.addTextField() { newTextField in
+            newTextField.keyboardType = .emailAddress
+            newTextField.placeholder = "Enter Email Address"
+            if self.emailLbl.text != placeTxt {
+                newTextField.text = self.emailLbl.text
+            }
+        }
+        let submitAction = UIAlertAction(title: "OK", style: .default) { [unowned ac] _ in
+            let answer = ac.textFields![0]
+            // do something interesting with "answer" here
+            if self.emailLbl.text != "" {
+                self.emailLbl.text = answer.text
+            }
+        }
+
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
+    
+    func configurationTextField(textField: UITextField!)
+    {
+        print("configurat hire the TextField")
+
+        if let tField = textField {
+            tField.keyboardType = .numberPad
+        }
     }
 
 }
