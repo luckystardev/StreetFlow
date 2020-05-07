@@ -49,12 +49,14 @@ class DealVC: BaseVC {
             
              if let data = es_data["data"] as? NSDictionary {
                 if let owner = data["owner"] as? NSDictionary {
-                    owner_name.text = owner["name"] as? String
+                    var ownerStr = owner["name"] as? String
+                    ownerStr = ownerStr?.replacingOccurrences(of: ";", with: ", ")
+                    owner_name.text = ownerStr
                     owner_street.text = owner["formatted_street_address"] as? String
                     let city : String = owner["city"] as? String ?? ""
                     let state : String = owner["state"] as? String ?? ""
                     let zip_code : String = owner["zip_code"] as? String ?? ""
-                    let address : String = city + "," + state + " " + zip_code
+                    let address : String = city + ", " + state + " " + zip_code
                     owner_address.text = address
                 }
                 if let assessments = data["assessments"] as? Array<Any> {

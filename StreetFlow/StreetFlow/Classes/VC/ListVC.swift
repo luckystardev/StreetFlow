@@ -38,12 +38,14 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
-        cell.nameLbl.text = info?["name"] ?? ""
+        var ownerStr = info?["name"] ?? ""
+        ownerStr = ownerStr?.replacingOccurrences(of: ";", with: ", ")
+        cell.nameLbl.text = ownerStr
         cell.streetLbl.text = info?["formatted_street_address"] ?? ""
         let city : String = (info?["city"] ?? "") ?? " "
         let state : String = (info?["state"] ?? "") ?? " "
         let zip_code : String = (info?["zip_code"] ?? "") ?? " "
-        let address : String = city + "," + state + " " + zip_code
+        let address : String = city + ", " + state + " " + zip_code
         cell.addressLbl.text = address
         return cell
     }

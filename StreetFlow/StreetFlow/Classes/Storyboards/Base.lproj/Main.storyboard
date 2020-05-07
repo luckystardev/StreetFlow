@@ -1008,8 +1008,8 @@
                                                 <action selector="downBtnAction:" destination="WwA-Xn-gad" eventType="touchUpInside" id="V5I-xV-ckC"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCH SEGGESTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-tG-VCs">
-                                            <rect key="frame" x="20" y="70" width="158.66666666666666" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCH SUGGESTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-tG-VCs">
+                                            <rect key="frame" x="20" y="70" width="160" height="18"/>
                                             <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                             <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1117,7 +1117,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="WwA-Xn-gad" id="saY-nZ-JKE"/>
                                                 </connections>
@@ -1207,7 +1207,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="EwD-Oo-8jf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kr-zn-u8K">
@@ -1249,7 +1249,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-eq-H0n" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="90" width="335" height="151"/>
+                                            <rect key="frame" x="20" y="90" width="335" height="111"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OWNER &amp; PROPERTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-j9-F4d">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1279,8 +1279,8 @@
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaR-Bs-DXY" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="100" width="335" height="51"/>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaR-Bs-DXY" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="60" width="335" height="51"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOk-s0-kTV">
                                                             <rect key="frame" x="10" y="10" width="35" height="35"/>
@@ -1334,7 +1334,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="AaR-Bs-DXY" secondAttribute="bottom" id="EEU-PM-aNI"/>
                                                 <constraint firstItem="AaR-Bs-DXY" firstAttribute="leading" secondItem="aZr-eq-H0n" secondAttribute="leading" id="SMF-Za-Ih0"/>
                                                 <constraint firstAttribute="trailing" secondItem="AaR-Bs-DXY" secondAttribute="trailing" id="XQj-yL-pv8"/>
-                                                <constraint firstAttribute="height" constant="151" id="xcm-AV-LLt"/>
+                                                <constraint firstAttribute="height" constant="111" id="xcm-AV-LLt"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1343,7 +1343,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-fh-j7h" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="251" width="335" height="89"/>
+                                            <rect key="frame" x="20" y="211" width="335" height="89"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SALE INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKF-in-ske">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1392,7 +1392,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4R-Gv-AxG" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="350" width="335" height="135"/>
+                                            <rect key="frame" x="20" y="310" width="335" height="135"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MORTGAGE INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBV-vO-SsW">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1455,7 +1455,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-oO-WNv" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="495" width="335" height="178"/>
+                                            <rect key="frame" x="20" y="455" width="335" height="178"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bee-mp-0cR">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1560,7 +1560,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZS6-fA-SFm" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="684" width="335" height="89"/>
+                                            <rect key="frame" x="20" y="644" width="335" height="89"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISTRICT INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6r-TR-ZeW">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1595,7 +1595,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wle-cw-j9J" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="783" width="335" height="80"/>
+                                            <rect key="frame" x="20" y="743" width="335" height="80"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY TAGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-IV-6jQ">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1664,7 +1664,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auF-Rl-sn5" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="873" width="335" height="145"/>
+                                            <rect key="frame" x="20" y="833" width="335" height="145"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OWNER DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiK-P2-B9D">
                                                     <rect key="frame" x="19.999999999999993" y="12" width="113.33333333333331" height="18"/>
@@ -1754,7 +1754,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiU-ej-Z0g" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="1028" width="335" height="128"/>
+                                            <rect key="frame" x="20" y="988" width="335" height="128"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3V-N4-9ky">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1813,7 +1813,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-DQ-i1a">
-                                            <rect key="frame" x="121.66666666666669" y="1180" width="132" height="29"/>
+                                            <rect key="frame" x="121.66666666666669" y="1140" width="132" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="QtW-tj-TE5"/>
                                                 <constraint firstAttribute="width" constant="132" id="t6p-bO-pPT"/>
