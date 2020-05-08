@@ -124,7 +124,7 @@ class DealVC: BaseVC {
         let placeTxt = "+ Add Phone Number"
         let ac = UIAlertController(title: "Enter Phone number", message: nil, preferredStyle: .alert)
         ac.addTextField() { newTextField in
-            newTextField.keyboardType = .namePhonePad
+            newTextField.keyboardType = .numberPad
             newTextField.placeholder = "Enter Phone Number"
             if self.phoneLbl.text != placeTxt {
                 newTextField.text = self.phoneLbl.text
