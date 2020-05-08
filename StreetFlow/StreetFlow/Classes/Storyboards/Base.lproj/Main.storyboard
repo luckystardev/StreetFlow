@@ -1598,34 +1598,20 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wle-cw-j9J" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="743" width="335" height="80"/>
+                                            <rect key="frame" x="20" y="743" width="335" height="150"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY TAGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-IV-6jQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROPERTY TAGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-IV-6jQ">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="UI3-0t-WGX"/>
+                                                        <constraint firstAttribute="width" constant="271" id="tYn-eS-EQd"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5Q-EU-UlN" customClass="RoundButton" customModule="StreetFlow" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="35" width="140" height="30"/>
-                                                    <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="XJl-4j-fWr"/>
-                                                        <constraint firstAttribute="width" constant="140" id="gZn-SW-7j6"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
-                                                    <state key="normal" title="Broken Window">
-                                                        <color key="titleColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="15"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-pk-ibF" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                                    <rect key="frame" x="165" y="35" width="150" height="30"/>
+                                                    <rect key="frame" x="20" y="35" width="150" height="30"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFB-U2-FOD">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -1641,24 +1627,49 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="Xvo-Zv-kg9"/>
-                                                        <constraint firstAttribute="height" constant="30" id="pYt-Ur-v8I"/>
+                                                        <constraint firstAttribute="width" constant="150" id="fbz-GQ-gdP"/>
+                                                        <constraint firstAttribute="height" constant="30" id="qUK-ue-lwB"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="Bzs-fm-xra" appends="YES" id="YbY-4r-hea"/>
+                                                    </connections>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5Q-EU-UlN" customClass="RoundButton" customModule="StreetFlow" customModuleProvider="target">
+                                                    <rect key="frame" x="180" y="35" width="140" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
+                                                    <state key="normal" title="Broken Window">
+                                                        <color key="titleColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsO-na-bgy">
+                                                    <rect key="frame" x="20" y="77" width="300" height="73"/>
+                                                </containerView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="0.096372003420000005" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="FYx-pk-ibF" secondAttribute="trailing" constant="20" id="Fdi-FZ-C0B"/>
-                                                <constraint firstAttribute="bottom" secondItem="n5Q-EU-UlN" secondAttribute="bottom" constant="15" id="Hzj-Ts-zWi"/>
-                                                <constraint firstAttribute="bottom" secondItem="FYx-pk-ibF" secondAttribute="bottom" constant="15" id="Te2-2W-Qhw"/>
-                                                <constraint firstItem="n5Q-EU-UlN" firstAttribute="leading" secondItem="wle-cw-j9J" secondAttribute="leading" constant="20" id="ezn-Re-fKT"/>
-                                                <constraint firstAttribute="height" constant="80" id="k7b-er-7gl"/>
+                                                <constraint firstAttribute="bottom" secondItem="vsO-na-bgy" secondAttribute="bottom" id="Mar-iZ-92L"/>
+                                                <constraint firstItem="vsO-na-bgy" firstAttribute="top" secondItem="FYx-pk-ibF" secondAttribute="bottom" constant="12" id="Qci-ck-gfQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="vsO-na-bgy" secondAttribute="trailing" constant="15" id="Rxt-gI-5RX"/>
+                                                <constraint firstItem="5tQ-IV-6jQ" firstAttribute="top" secondItem="wle-cw-j9J" secondAttribute="top" constant="11" id="WP5-B5-iNp"/>
+                                                <constraint firstItem="FYx-pk-ibF" firstAttribute="top" secondItem="5tQ-IV-6jQ" secondAttribute="bottom" constant="7" id="a52-QW-wWa"/>
+                                                <constraint firstAttribute="height" constant="150" id="k7b-er-7gl"/>
+                                                <constraint firstItem="FYx-pk-ibF" firstAttribute="leading" secondItem="wle-cw-j9J" secondAttribute="leading" constant="20" id="rsJ-cy-ANz"/>
+                                                <constraint firstItem="vsO-na-bgy" firstAttribute="leading" secondItem="wle-cw-j9J" secondAttribute="leading" constant="20" id="vlO-uI-htJ"/>
+                                                <constraint firstItem="5tQ-IV-6jQ" firstAttribute="leading" secondItem="wle-cw-j9J" secondAttribute="leading" constant="20" id="zSJ-zG-pVc"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1667,16 +1678,16 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auF-Rl-sn5" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="833" width="335" height="145"/>
+                                            <rect key="frame" x="20" y="903" width="335" height="145"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OWNER DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiK-P2-B9D">
-                                                    <rect key="frame" x="20.000000000000007" y="11.999999999999998" width="110.66666666666669" height="16.333333333333329"/>
+                                                    <rect key="frame" x="19.999999999999993" y="12" width="113.33333333333331" height="18"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJJ-2r-XGd" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="34.333333333333371" width="295" height="40"/>
+                                                    <rect key="frame" x="20" y="36" width="295" height="40"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="im_call" translatesAutoresizingMaskIntoConstraints="NO" id="rRO-Jz-e9c">
                                                             <rect key="frame" x="14" y="14" width="12" height="12"/>
@@ -1711,7 +1722,7 @@
                                                     </connections>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHK-mO-8bg" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="84.333333333333371" width="295" height="40"/>
+                                                    <rect key="frame" x="20" y="86" width="295" height="40"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="im_msg" translatesAutoresizingMaskIntoConstraints="NO" id="M30-Wc-zgg">
                                                             <rect key="frame" x="14" y="15" width="12" height="10"/>
@@ -1765,7 +1776,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiU-ej-Z0g" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="988" width="335" height="128"/>
+                                            <rect key="frame" x="20" y="1058" width="335" height="128"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROPERTY INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3V-N4-9ky">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
@@ -1827,7 +1838,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-DQ-i1a">
-                                            <rect key="frame" x="121.66666666666669" y="1140" width="132" height="29"/>
+                                            <rect key="frame" x="121.66666666666669" y="1210" width="132" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="QtW-tj-TE5"/>
                                                 <constraint firstAttribute="width" constant="132" id="t6p-bO-pPT"/>
@@ -1961,6 +1972,7 @@
                         <outlet property="sale_price" destination="KcO-k5-RW6" id="7Y3-Ys-73u"/>
                         <outlet property="school_district" destination="Fy1-pn-sqx" id="wxA-c4-iJI"/>
                         <outlet property="selectLocationView" destination="miN-Rs-faJ" id="8py-0B-ke6"/>
+                        <outlet property="tagContainer" destination="vsO-na-bgy" id="m4b-UE-bQZ"/>
                         <outlet property="tagView" destination="wle-cw-j9J" id="GE8-hV-Cg2"/>
                     </connections>
                 </viewController>
@@ -1975,8 +1987,13 @@
                         <action selector="addEmailAction:" destination="pT2-gb-2cq" id="krb-qM-jRc"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="Bzs-fm-xra">
+                    <connections>
+                        <action selector="ManageTagsAction:" destination="pT2-gb-2cq" id="F6M-Ru-EEv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1801" y="1569"/>
+            <point key="canvasLocation" x="1800.8" y="1568.7192118226601"/>
         </scene>
         <!--ListVC-->
         <scene sceneID="jMc-uW-YCw">

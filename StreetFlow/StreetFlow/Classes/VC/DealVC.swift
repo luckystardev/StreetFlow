@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TaggerKit
 
 class DealVC: BaseVC {
     
@@ -40,6 +41,7 @@ class DealVC: BaseVC {
     @IBOutlet weak var phoneLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var tagView: RoundView!
+    @IBOutlet weak var tagContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +99,10 @@ class DealVC: BaseVC {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func ManageTagsAction(_ sender: Any) {
+        
+    }
+    
     @IBAction func offerChangeAction(_ sender: Any) {
         let str1 = "Not Connected Yet"
         let str2 = "Contacted Owner"
@@ -162,15 +168,6 @@ class DealVC: BaseVC {
 
         ac.addAction(submitAction)
         present(ac, animated: true)
-    }
-    
-    func configurationTextField(textField: UITextField!)
-    {
-        print("configurat hire the TextField")
-
-        if let tField = textField {
-            tField.keyboardType = .numberPad
-        }
     }
     
     func format(phoneNumber sourcePhoneNumber: String) -> String? {

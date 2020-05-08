@@ -6,9 +6,11 @@ target 'StreetFlow' do
   use_frameworks!
 
   # Pods for StreetFlow
+pod 'TaggerKit'
 pod 'MASegmentedControl'
 pod 'SwiftyPageController'
 pod 'Parse'
 pod 'JGProgressHUD'
+
 
 end

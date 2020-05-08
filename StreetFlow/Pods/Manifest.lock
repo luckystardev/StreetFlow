@@ -7,12 +7,14 @@ PODS:
   - Parse/Core (1.17.3):
     - Bolts/Tasks (~> 1.9)
   - SwiftyPageController (0.1.2)
+  - TaggerKit (0.6.1)
 
 DEPENDENCIES:
   - JGProgressHUD
   - MASegmentedControl
   - Parse
   - SwiftyPageController
+  - TaggerKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - MASegmentedControl
     - Parse
     - SwiftyPageController
+    - TaggerKit
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -28,7 +31,8 @@ SPEC CHECKSUMS:
   MASegmentedControl: 81aa9aa326e27e969ef44e34285bb400649497eb
   Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
   SwiftyPageController: d077d0e1e609ced8c70d2109a445e5df55837b30
+  TaggerKit: e88422048a006b409a37b37f24785dfcca69b5b2
 
-PODFILE CHECKSUM: fb79d0b00b225536b67f25235ce1846ec9471312
+PODFILE CHECKSUM: bf3d3f2798b63b151095f4263e35ed8d397f4891
 
 COCOAPODS: 1.6.1
