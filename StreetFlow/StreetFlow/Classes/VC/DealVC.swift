@@ -41,13 +41,22 @@ class DealVC: BaseVC {
     @IBOutlet weak var phoneLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var tagView: RoundView!
+    
     @IBOutlet weak var tagContainer: UIView!
+    @IBOutlet weak var addTagView: UIView!
+    @IBOutlet var addTagsTextField : TKTextField!
+    @IBOutlet var searchContainer : UIView!
+    
+    var productTags: TKCollectionView!
+    var allTags: TKCollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         selectLocationView.addShadowEffect()
         bottomMenuBtn.addShadowEffect()
+        
+        initTags()
         
         if es_data != nil {
              //need to update
@@ -95,12 +104,52 @@ class DealVC: BaseVC {
         }
     }
     
+    func initTags() {
+        addTagView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        addTagView.layer.borderWidth = 1.0
+        addTagView.isHidden = true
+        
+        addTagsTextField.backgroundColor = UIColor.clear
+        addTagsTextField.layer.borderColor = #colorLiteral(red: 0.4078431373, green: 0.5098039216, blue: 0.631372549, alpha: 1)
+        addTagsTextField.layer.borderWidth = 1.0
+        addTagsTextField.layer.cornerRadius = 6
+        
+        productTags = TKCollectionView(tags: [],
+                                       action: .removeTag,
+                                       receiver: nil)
+        
+        allTags = TKCollectionView(tags: [],
+                                   action: .addTag,
+                                   receiver: productTags)
+        
+        productTags.customFont = UIFont(name: "CircularStd-Book", size: 12)!
+        allTags.customFont = UIFont(name: "CircularStd-Book", size: 12)!
+        productTags.customBackgroundColor = #colorLiteral(red: 0.4078431373, green: 0.5098039216, blue: 0.631372549, alpha: 1)
+        allTags.customBackgroundColor = #colorLiteral(red: 0.4078431373, green: 0.5098039216, blue: 0.631372549, alpha: 1)
+        
+        // Set the current controller as the delegate of both collections
+        productTags.delegate = self
+        allTags.delegate = self
+        
+        // Set the sender and receiver of the TextField
+        addTagsTextField.sender     = allTags
+        addTagsTextField.receiver     = productTags
+        
+        add(productTags, toView: tagContainer)
+        add(allTags, toView: searchContainer)
+    }
+    
     @IBAction func downBtnAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func closeTagViewAction(_ sender: Any) {
+        addTagView.isHidden = true
+        self.view.endEditing(true)
+    }
+    
     @IBAction func ManageTagsAction(_ sender: Any) {
-        
+        addTagView.isHidden = false
     }
     
     @IBAction func offerChangeAction(_ sender: Any) {
@@ -233,5 +282,17 @@ extension String {
         }
 
         return String(self[substringStartIndex ..< substringEndIndex])
+    }
+}
+
+extension DealVC: TKCollectionViewDelegate {
+
+    func tagIsBeingAdded(name: String?) {
+        // Example: save testCollection.tags to UserDefault
+        print("added \(name!)")
+    }
+    
+    func tagIsBeingRemoved(name: String?) {
+        print("removed \(name!)")
     }
 }
