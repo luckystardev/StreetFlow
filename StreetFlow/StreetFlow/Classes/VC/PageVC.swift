@@ -70,6 +70,13 @@ class PageVC: BaseVC {
     }
     
     @IBAction func topMenuBtnAction(_ sender: UIButton) {
+        if containerController.selectedIndex == 0 {
+            print("MapVC")
+            let nc = NotificationCenter.default
+            nc.post(name: Notification.Name("CurrentLocation"), object: nil)
+        } else {
+            print("ListVC")
+        }
         /*
         let url = URL(string: "https://apis.estated.com/v4/property?token=cyoidbzD1vn0HwQsykSFLvLXKWVmFU&combined_address=151%20Battle%20Green%20Dr,%20Rochester,%20NY%2014624")
 

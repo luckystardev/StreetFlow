@@ -23,6 +23,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     
     var locationManager = CLLocationManager()
     var isSuccess = false
+    var mUserLocation:CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,10 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
 //        annotation.title = "Big Ben"
 //        annotation.subtitle = "New York"
 //        map.addAnnotation(annotation)
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(setCurrentLocation), name: Notification.Name("CurrentLocation"), object: nil)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,16 +100,25 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
 //        popNextVCWithID("DealVC", isFull: false)
     }
     
+    @objc private func setCurrentLocation(notification: NSNotification){
+        print("setCurrentLocation")
+        let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)
+        let mRegion = MKCoordinateRegion(center: center, span: span)
+
+        map.setRegion(mRegion, animated: true)
+    }
+    
     //MARK:- CLLocationManagerDelegate Methods
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         locationManager.stopUpdatingLocation()
         
-        let mUserLocation:CLLocation = locations[0] as CLLocation
+        mUserLocation = locations[0] as CLLocation
 
         let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)
         let mRegion = MKCoordinateRegion(center: center, span: span)
 
         map.setRegion(mRegion, animated: true)
@@ -137,7 +151,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
                         DispatchQueue.main.async {
                             self.infoLbl.text = "Tap on a property to pick"
                             let newPin = MKPointAnnotation()
-                            newPin.coordinate = mUserLocation.coordinate
+                            newPin.coordinate = self.mUserLocation.coordinate
                             self.map.addAnnotation(newPin)
                         }
                         self.isSuccess = true
