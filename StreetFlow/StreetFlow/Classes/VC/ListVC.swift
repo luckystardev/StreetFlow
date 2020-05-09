@@ -38,9 +38,8 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
-        var ownerStr = info?["name"] ?? ""
-        ownerStr = ownerStr?.replacingOccurrences(of: ";", with: ", ")
-        cell.nameLbl.text = ownerStr
+        let ownerStr = info?["name"] ?? ""
+        cell.nameLbl.text = updateFullname(ownerStr!)
         cell.streetLbl.text = info?["formatted_street_address"] ?? ""
         let city : String = (info?["city"] ?? "") ?? " "
         let state : String = (info?["state"] ?? "") ?? " "

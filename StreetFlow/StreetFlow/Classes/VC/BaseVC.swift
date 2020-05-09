@@ -17,6 +17,25 @@ class BaseVC: UIViewController {
 
     }
     
+    func updateFullname(_ name: String) -> String {
+//        var nameStr = name.replacingOccurrences(of: ";", with: ", ")
+        let nameAry = name.components(separatedBy: ";")
+        var newAry: [String] = []
+        for name in nameAry {
+            var components = name.components(separatedBy: " ")
+            if components.count > 0 {
+                 let lastName = components.removeFirst()
+                 let firstName = components.joined(separator: " ")
+                 let newName = firstName + " " + lastName
+//                 print(newName)
+                newAry.append(newName)
+            }
+        }
+        let newStr = newAry.joined(separator: ", ")
+        print(newStr)
+        return newStr
+    }
+    
     @objc
     func tapForgotLabel(gesture: UITapGestureRecognizer) {
         print("Tapped forgot label")

@@ -50,6 +50,8 @@ class DealVC: BaseVC {
     var productTags: TKCollectionView!
     var allTags: TKCollectionView!
     
+    let phoneFieldTag = 1000
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,9 +67,8 @@ class DealVC: BaseVC {
             
              if let data = es_data["data"] as? NSDictionary {
                 if let owner = data["owner"] as? NSDictionary {
-                    var ownerStr = owner["name"] as? String
-                    ownerStr = ownerStr?.replacingOccurrences(of: ";", with: ", ")
-                    owner_name.text = ownerStr
+                    let ownerStr = owner["name"] as? String
+                    owner_name.text = updateFullname(ownerStr!)
                     owner_street.text = owner["formatted_street_address"] as? String
                     let city : String = owner["city"] as? String ?? ""
                     let state : String = owner["state"] as? String ?? ""
@@ -181,15 +182,21 @@ class DealVC: BaseVC {
         ac.addTextField() { newTextField in
             newTextField.keyboardType = .numberPad
             newTextField.placeholder = "Enter Phone Number"
-            if self.phoneLbl.text != placeTxt {
-                newTextField.text = self.phoneLbl.text
+            newTextField.tag = self.phoneFieldTag
+            newTextField.delegate = self
+            
+            if self.phoneLbl.text != placeTxt && self.phoneLbl.text != "" && self.phoneLbl.text != nil {
+                newTextField.text = self.phoneLbl.text!.replacingOccurrences(of: "-", with: "")
             }
         }
         let submitAction = UIAlertAction(title: "OK", style: .default) { [unowned ac] _ in
             let answer = ac.textFields![0]
             // do something interesting with "answer" here
-            if self.phoneLbl.text != "" {
-                self.phoneLbl.text = self.format(phoneNumber: answer.text!)
+            let formattedPhone = self.format(phoneNumber: answer.text!)
+            if formattedPhone == "" || formattedPhone == nil {
+                self.phoneLbl.text = placeTxt
+            } else {
+                self.phoneLbl.text = formattedPhone
             }
         }
 
@@ -236,7 +243,7 @@ class DealVC: BaseVC {
         // Leading 1
         var leadingOne = ""
         if hasLeadingOne {
-            leadingOne = "1 "
+            leadingOne = ""
             sourceIndex += 1
         }
 
@@ -247,7 +254,7 @@ class DealVC: BaseVC {
             guard let areaCodeSubstring = numbersOnly.substring(start: sourceIndex, offsetBy: areaCodeLength) else {
                 return nil
             }
-            areaCode = String(format: "(%@) ", areaCodeSubstring)
+            areaCode = String(format: "%@-", areaCodeSubstring)
             sourceIndex += areaCodeLength
         }
 
@@ -268,6 +275,27 @@ class DealVC: BaseVC {
     }
 
 
+}
+
+extension DealVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == phoneFieldTag {
+            guard let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                    return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            return count <= 11
+        }
+        return true
+    }
 }
 
 extension String {
