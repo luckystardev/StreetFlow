@@ -19,6 +19,7 @@ class BaseVC: UIViewController {
     
     func updateFullname(_ name: String) -> String {
 //        var nameStr = name.replacingOccurrences(of: ";", with: ", ")
+        print(name)
         let nameAry = name.components(separatedBy: ";")
         var newAry: [String] = []
         for name in nameAry {
@@ -27,7 +28,7 @@ class BaseVC: UIViewController {
                  let lastName = components.removeFirst()
                  let firstName = components.joined(separator: " ")
                  let newName = firstName + " " + lastName
-//                 print(newName)
+                 print(newName)
                 newAry.append(newName)
             }
         }

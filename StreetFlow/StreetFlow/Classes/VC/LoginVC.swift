@@ -26,6 +26,7 @@ class LoginVC: BaseVC {
         //This is test code
         emailTxtFld.text = "q@q.com"
         pwdTxtFld.text = "qwerqwer"
+//        self.updateFullname("LIEN KIEN;CHEN TRACY")
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -233,9 +233,9 @@ class DealVC: BaseVC {
         let hasLeadingOne = numbersOnly.hasPrefix("1")
 
         // Check for supported phone number length
-        guard length == 7 || (length == 10 && !hasLeadingOne) || (length == 11 && hasLeadingOne) else {
-            return nil
-        }
+//        guard length == 7 || (length == 10 && !hasLeadingOne) || (length == 11 && hasLeadingOne) else {
+//            return nil
+//        }
 
         let hasAreaCode = (length >= 10)
         var sourceIndex = 0

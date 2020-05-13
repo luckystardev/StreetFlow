@@ -1397,37 +1397,36 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4R-Gv-AxG" customClass="RoundView" customModule="StreetFlow" customModuleProvider="target">
                                             <rect key="frame" x="20" y="310" width="335" height="135"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MORTGAGE INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBV-vO-SsW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORTGAGE INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBV-vO-SsW">
                                                     <rect key="frame" x="20" y="11" width="271" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="NA8-la-OKa"/>
+                                                        <constraint firstAttribute="width" constant="271" id="VIR-iy-cIJ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mortgage amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-fC-ka1">
-                                                    <rect key="frame" x="20" y="36" width="150" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-fC-ka1">
+                                                    <rect key="frame" x="20" y="36" width="157.66666666666666" height="18"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lender Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gem-lf-stt">
-                                                    <rect key="frame" x="170" y="36" width="150" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lender Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gem-lf-stt">
+                                                    <rect key="frame" x="177.66666666666663" y="36" width="157.33333333333337" height="18"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.50980392159999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$240,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld7-VX-scD">
-                                                    <rect key="frame" x="20" y="57" width="150" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$240,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld7-VX-scD">
+                                                    <rect key="frame" x="20" y="57" width="157.66666666666666" height="18"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AB Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="RYg-Ar-OEP">
-                                                    <rect key="frame" x="170" y="57" width="150" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AB Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="RYg-Ar-OEP">
+                                                    <rect key="frame" x="177.66666666666663" y="57" width="157.33333333333337" height="18"/>
                                                     <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1449,7 +1448,26 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="gem-lf-stt" firstAttribute="leading" secondItem="sy7-fC-ka1" secondAttribute="trailing" id="7F6-1Y-ZOX"/>
+                                                <constraint firstItem="gem-lf-stt" firstAttribute="top" secondItem="TBV-vO-SsW" secondAttribute="bottom" constant="8" id="7co-Tr-8AE"/>
+                                                <constraint firstItem="Ld7-VX-scD" firstAttribute="height" secondItem="sy7-fC-ka1" secondAttribute="height" id="8gz-Na-vpt"/>
+                                                <constraint firstItem="gem-lf-stt" firstAttribute="leading" secondItem="sy7-fC-ka1" secondAttribute="trailing" id="8yX-fR-OEi"/>
+                                                <constraint firstItem="sy7-fC-ka1" firstAttribute="top" secondItem="TBV-vO-SsW" secondAttribute="bottom" constant="8" id="H25-cJ-7VX"/>
+                                                <constraint firstItem="RYg-Ar-OEP" firstAttribute="height" secondItem="sy7-fC-ka1" secondAttribute="height" id="JHY-52-y2s"/>
+                                                <constraint firstItem="gem-lf-stt" firstAttribute="width" secondItem="sy7-fC-ka1" secondAttribute="width" id="Lm6-oo-FLe"/>
+                                                <constraint firstAttribute="trailing" secondItem="gem-lf-stt" secondAttribute="trailing" id="Lze-eY-hRZ"/>
+                                                <constraint firstItem="RYg-Ar-OEP" firstAttribute="top" secondItem="gem-lf-stt" secondAttribute="bottom" constant="3" id="QwY-wv-OZ6"/>
+                                                <constraint firstItem="TBV-vO-SsW" firstAttribute="top" secondItem="j4R-Gv-AxG" secondAttribute="top" constant="11" id="Sqb-a5-ZH1"/>
+                                                <constraint firstItem="gem-lf-stt" firstAttribute="height" secondItem="sy7-fC-ka1" secondAttribute="height" id="fiA-Cr-YpK"/>
+                                                <constraint firstItem="sy7-fC-ka1" firstAttribute="leading" secondItem="j4R-Gv-AxG" secondAttribute="leading" constant="20" id="hUn-Ky-6Nl"/>
                                                 <constraint firstAttribute="height" constant="135" id="kmZ-JY-17f"/>
+                                                <constraint firstItem="Ld7-VX-scD" firstAttribute="width" secondItem="sy7-fC-ka1" secondAttribute="width" id="mMK-4c-nlF"/>
+                                                <constraint firstAttribute="trailing" secondItem="RYg-Ar-OEP" secondAttribute="trailing" id="pna-GK-KJE"/>
+                                                <constraint firstItem="Ld7-VX-scD" firstAttribute="top" secondItem="sy7-fC-ka1" secondAttribute="bottom" constant="3" id="sSS-D9-NNz"/>
+                                                <constraint firstItem="TBV-vO-SsW" firstAttribute="leading" secondItem="j4R-Gv-AxG" secondAttribute="leading" constant="20" id="t2E-KU-QCW"/>
+                                                <constraint firstItem="Ld7-VX-scD" firstAttribute="leading" secondItem="j4R-Gv-AxG" secondAttribute="leading" constant="20" id="tcQ-pa-bsO"/>
+                                                <constraint firstItem="RYg-Ar-OEP" firstAttribute="width" secondItem="sy7-fC-ka1" secondAttribute="width" id="xZ1-2r-alz"/>
+                                                <constraint firstItem="RYg-Ar-OEP" firstAttribute="leading" secondItem="Ld7-VX-scD" secondAttribute="trailing" id="zDV-MT-aq2"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2490,7 +2508,7 @@
         <image name="bt_plus" width="30" height="30"/>
         <image name="bt_right" width="12" height="21"/>
         <image name="bt_up" width="55" height="30"/>
-        <image name="bt_ver_menu" width="35" height="35"/>
+        <image name="bt_ver_menu" width="67.5" height="67.5"/>
         <image name="checkmark.circle" catalog="system" width="64" height="62"/>
         <image name="im_call" width="18" height="18"/>
         <image name="im_info" width="21" height="21"/>
