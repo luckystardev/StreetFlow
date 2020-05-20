@@ -24,6 +24,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     var locationManager = CLLocationManager()
     var isSuccess = false
     var mUserLocation:CLLocation!
+    let lDelta = 0.002
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +103,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     @objc private func setCurrentLocation(notification: NSNotification){
         print("setCurrentLocation")
         let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)
+        let span = MKCoordinateSpan(latitudeDelta: lDelta, longitudeDelta: lDelta)
         let mRegion = MKCoordinateRegion(center: center, span: span)
 
         map.setRegion(mRegion, animated: true)
@@ -117,7 +118,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
         mUserLocation = locations[0] as CLLocation
 
         let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)
+        let span = MKCoordinateSpan(latitudeDelta: lDelta, longitudeDelta: lDelta)
         let mRegion = MKCoordinateRegion(center: center, span: span)
 
         map.setRegion(mRegion, animated: true)

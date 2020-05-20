@@ -65,7 +65,7 @@ class BaseVC: UIViewController {
     }
     
     func getEstatedInfo(_ address: String, completion: @escaping (_ flag: Bool, _ result: String) ->()) {
-        let baseUrl = "https://apis.estated.com/v4/property?token=p1w0ToQ4IddhvDSQgaR37WDy7PWmxV&combined_address="
+        let baseUrl = "https://apis.estated.com/v4/property?token=bBobXuOJIV3loWpA1v5TxhJ6jsrDq5&combined_address="
         let urlStr = baseUrl + address
         let urlString = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         print(urlString!)
