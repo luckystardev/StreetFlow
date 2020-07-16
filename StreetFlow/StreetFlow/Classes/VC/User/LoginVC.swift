@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 import JGProgressHUD
 
 class LoginVC: BaseVC {
@@ -24,7 +23,7 @@ class LoginVC: BaseVC {
         applyAttributedString()
         
         //This is test code
-        emailTxtFld.text = "q@q.com"
+        emailTxtFld.text = "user@test.com"
         pwdTxtFld.text = "qwerqwer"
 //        self.updateFullname("LIEN KIEN;CHEN TRACY")
     }
@@ -60,20 +59,18 @@ class LoginVC: BaseVC {
         hud.textLabel.text = "Log in..."
         hud.show(in: self.view)
         
-        PFUser.logInWithUsername(inBackground: emailTxtFld.text!, password: pwdTxtFld.text!) { (user, error) in
+        let webService =  RestAPIManager.sharedManager
+        webService?.login(emailTxtFld.text!, password: pwdTxtFld.text!, callback: { (responseObject:NSDictionary?, error:NSError?) in
             hud.dismiss()
-            if user != nil {
-                self.goNextVCWithID("PageVC")
-            } else {
+            if((error) != nil){ //error
                 if let descrip = error?.localizedDescription{
-                    let hud2 = JGProgressHUD(style: .dark)
-                    hud2.textLabel.text = descrip
-                    hud2.indicatorView = JGProgressHUDErrorIndicatorView()
-                    hud2.show(in: self.view)
-                    hud2.dismiss(afterDelay: 2.0)
+                    self.showErrorAlert(title: descrip)
                 }
+            }else{ //success
+                //TODO: save access_token
+                self.goNextVCWithID("PageVC")
             }
-        }
+        })
     }
     
     @IBAction func signupAction(_ sender: Any) {

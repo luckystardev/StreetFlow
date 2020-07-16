@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 import JGProgressHUD
 
 class SignupVC: BaseVC {
@@ -26,6 +25,13 @@ class SignupVC: BaseVC {
         super.viewDidLoad()
         
         applyAttributedString()
+        
+//        emailLbl.text = "user22@test.com"
+//        pwdLbl.text = "qwerqwer"
+//        firstnameLbl.text = "test"
+//        lastnameLbl.text = "test"
+//        companyLbl.text = "test"
+//        phoneLbl.text = "1234567890"
     }
     
     
@@ -55,32 +61,29 @@ class SignupVC: BaseVC {
     }
     
     @IBAction func signupBtnAction(_ sender: Any) {
-        let user = PFUser()
-        user.username = emailLbl.text
-        user.email = emailLbl.text
-        user.password = pwdLbl.text
-        user["first_name"] = firstnameLbl.text
-        user["last_name"] = lastnameLbl.text
-        user["phone"] = phoneLbl.text
-        user["company"] = companyLbl.text
-        print(user)
+        
+        let dic = ["email": emailLbl.text!,
+                   "password": pwdLbl.text!,
+                   "firstname": firstnameLbl.text!,
+                   "lastname": lastnameLbl.text!,
+                   "company": companyLbl.text!,
+                   "phone": phoneLbl.text!]
         
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Sign up..."
         hud.show(in: self.view)
         
-        user.signUpInBackground { (success, error) in
+        let webService =  RestAPIManager.sharedManager
+        webService?.register(dic as [String : Any], callback: { (responseObject:NSDictionary?, error:NSError?) in
             hud.dismiss()
-            if success {
+            if((error) != nil){ //error
+                if let descrip = error?.localizedDescription{
+                    self.showErrorAlert(title: descrip)
+                }
+            }else{ //success
                 self.goNextVCWithID("PageVC")
-            } else {
-                let hud2 = JGProgressHUD(style: .dark)
-                hud2.textLabel.text = "Sign up error"
-                hud2.indicatorView = JGProgressHUDErrorIndicatorView()
-                hud2.show(in: self.view)
-                hud2.dismiss(afterDelay: 2.0)
             }
-        }
+        })
     }
     
     @IBAction func loginBtnAction(_ sender: Any) {

@@ -11,6 +11,6 @@ pod 'MASegmentedControl'
 pod 'SwiftyPageController'
 pod 'Parse'
 pod 'JGProgressHUD'
-
+pod 'Alamofire'
 
 end

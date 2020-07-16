@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.1.0)
   - Bolts/Tasks (1.9.0)
   - JGProgressHUD (2.1)
   - MASegmentedControl (0.0.3)
@@ -10,6 +11,7 @@ PODS:
   - TaggerKit (0.6.1)
 
 DEPENDENCIES:
+  - Alamofire
   - JGProgressHUD
   - MASegmentedControl
   - Parse
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Bolts
     - JGProgressHUD
     - MASegmentedControl
@@ -26,6 +29,7 @@ SPEC REPOS:
     - TaggerKit
 
 SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   MASegmentedControl: 81aa9aa326e27e969ef44e34285bb400649497eb
@@ -33,6 +37,6 @@ SPEC CHECKSUMS:
   SwiftyPageController: d077d0e1e609ced8c70d2109a445e5df55837b30
   TaggerKit: e88422048a006b409a37b37f24785dfcca69b5b2
 
-PODFILE CHECKSUM: bf3d3f2798b63b151095f4263e35ed8d397f4891
+PODFILE CHECKSUM: 2d1cbd9c4ef639d1e2915ff65d0fe03c2d207ec2
 
 COCOAPODS: 1.6.1

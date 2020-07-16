@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A3161A492421B85700B595AD /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3161A482421B85700B595AD /* SignupVC.swift */; };
+		A316846324B6950A00DF7B11 /* RestAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A316846224B6950A00DF7B11 /* RestAPIManager.swift */; };
+		A322C81D24BF084200C1E223 /* ResetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322C81C24BF084200C1E223 /* ResetPwdVC.swift */; };
+		A322C81F24BF087200C1E223 /* ConfirmEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322C81E24BF087200C1E223 /* ConfirmEmailVC.swift */; };
 		A327B06B241B555A005821DB /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327B06A241B555A005821DB /* ListCell.swift */; };
 		A32AB1BF2418CD0A00102FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB1BE2418CD0A00102FB2 /* AppDelegate.swift */; };
 		A32AB1C12418CD0A00102FB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB1C02418CD0A00102FB2 /* SceneDelegate.swift */; };
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		A3161A482421B85700B595AD /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		A316846224B6950A00DF7B11 /* RestAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManager.swift; sourceTree = "<group>"; };
+		A322C81C24BF084200C1E223 /* ResetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPwdVC.swift; sourceTree = "<group>"; };
+		A322C81E24BF087200C1E223 /* ConfirmEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailVC.swift; sourceTree = "<group>"; };
 		A327B06A241B555A005821DB /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		A32AB1BB2418CD0A00102FB2 /* StreetFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32AB1BE2418CD0A00102FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,30 @@
 				EC12F8F8C056A23912E76214 /* Pods-StreetFlow.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A322C81A24BF07E200C1E223 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A32AB1DA2418D8AE00102FB2 /* LoginVC.swift */,
+				A3161A482421B85700B595AD /* SignupVC.swift */,
+				A322C81C24BF084200C1E223 /* ResetPwdVC.swift */,
+				A322C81E24BF087200C1E223 /* ConfirmEmailVC.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		A322C81B24BF07FE00C1E223 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A330B46C241A002B00C68A16 /* PageVC.swift */,
+				A330B4682419FB8200C68A16 /* MapVC.swift */,
+				A330B46A2419FB9300C68A16 /* ListVC.swift */,
+				A3553B1E241A20EE00A66339 /* MenuVC.swift */,
+				A3553B20241A3D6000A66339 /* SearchVC.swift */,
+				A3553B22241A3D9E00A66339 /* DealVC.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A32AB1B22418CD0900102FB2 = {
@@ -151,15 +181,9 @@
 		A32AB1D42418D5A000102FB2 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				A32AB1DA2418D8AE00102FB2 /* LoginVC.swift */,
-				A3161A482421B85700B595AD /* SignupVC.swift */,
 				A3B3A233241B813800FE98C5 /* BaseVC.swift */,
-				A330B46C241A002B00C68A16 /* PageVC.swift */,
-				A330B4682419FB8200C68A16 /* MapVC.swift */,
-				A330B46A2419FB9300C68A16 /* ListVC.swift */,
-				A3553B1E241A20EE00A66339 /* MenuVC.swift */,
-				A3553B20241A3D6000A66339 /* SearchVC.swift */,
-				A3553B22241A3D9E00A66339 /* DealVC.swift */,
+				A322C81A24BF07E200C1E223 /* User */,
+				A322C81B24BF07FE00C1E223 /* Main */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -172,6 +196,7 @@
 				A330B4642419EBEE00C68A16 /* RoundView.swift */,
 				A330B4662419EC0A00C68A16 /* TopRoundView.swift */,
 				A327B06A241B555A005821DB /* ListCell.swift */,
+				A316846224B6950A00DF7B11 /* RestAPIManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +351,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StreetFlow/Pods-StreetFlow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MASegmentedControl/MASegmentedControl.framework",
@@ -337,6 +363,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASegmentedControl.framework",
@@ -356,9 +383,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A316846324B6950A00DF7B11 /* RestAPIManager.swift in Sources */,
 				A3553B21241A3D6000A66339 /* SearchVC.swift in Sources */,
 				A32AB1BF2418CD0A00102FB2 /* AppDelegate.swift in Sources */,
 				A330B46D241A002B00C68A16 /* PageVC.swift in Sources */,
+				A322C81D24BF084200C1E223 /* ResetPwdVC.swift in Sources */,
 				A327B06B241B555A005821DB /* ListCell.swift in Sources */,
 				A3B3A234241B813800FE98C5 /* BaseVC.swift in Sources */,
 				A330B4652419EBEE00C68A16 /* RoundView.swift in Sources */,
@@ -371,6 +400,7 @@
 				A3553B23241A3D9E00A66339 /* DealVC.swift in Sources */,
 				A330B4692419FB8200C68A16 /* MapVC.swift in Sources */,
 				A330B4672419EC0A00C68A16 /* TopRoundView.swift in Sources */,
+				A322C81F24BF087200C1E223 /* ConfirmEmailVC.swift in Sources */,
 				A32AB1DB2418D8AE00102FB2 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

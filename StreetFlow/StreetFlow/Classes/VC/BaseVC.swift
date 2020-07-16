@@ -17,6 +17,14 @@ class BaseVC: UIViewController {
 
     }
     
+    func showErrorAlert(title: String){
+        let hud2 = JGProgressHUD(style: .dark)
+        hud2.textLabel.text = title
+        hud2.indicatorView = JGProgressHUDErrorIndicatorView()
+        hud2.show(in: self.view)
+        hud2.dismiss(afterDelay: 2.0)
+    }
+    
     func updateFullname(_ name: String) -> String {
 //        var nameStr = name.replacingOccurrences(of: ";", with: ", ")
         print(name)
@@ -40,6 +48,7 @@ class BaseVC: UIViewController {
     @objc
     func tapForgotLabel(gesture: UITapGestureRecognizer) {
         print("Tapped forgot label")
+        goNextVCWithID("ResetVC")
     }
     
     @objc
@@ -62,6 +71,10 @@ class BaseVC: UIViewController {
     
     func backVC() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func backLoginVC() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func getEstatedInfo(_ address: String, completion: @escaping (_ flag: Bool, _ result: String) ->()) {
