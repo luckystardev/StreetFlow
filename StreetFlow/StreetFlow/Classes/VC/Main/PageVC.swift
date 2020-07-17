@@ -44,6 +44,17 @@ class PageVC: BaseVC {
         bottomMenuBtn.addShadowEffect()
         topMenuBtn.addShadowEffect()
         viewTypeSegment.addShadowEffect()
+        
+//        let webService =  RestAPIManager.sharedManager
+//        webService?.getUserInfo(callback: { (responseObject:NSDictionary?, error:NSError?) in
+//            if((error) != nil){ //error
+//                if let descrip = error?.localizedDescription{
+//                    self.showErrorAlert(title: descrip)
+//                }
+//            }else{ //success
+//                print("success")
+//            }
+//        })
     }
     
     @IBAction func segmentChanged(_ sender: MASegmentedControl) {

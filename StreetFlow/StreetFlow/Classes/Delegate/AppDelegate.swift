@@ -11,6 +11,8 @@ import CoreLocation
 import Parse
 
 var es_data: NSDictionary!
+var access_token: String!
+var userId: String!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
