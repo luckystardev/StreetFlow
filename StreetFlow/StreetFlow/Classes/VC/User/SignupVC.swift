@@ -81,7 +81,11 @@ class SignupVC: BaseVC {
                     self.showErrorAlert(title: descrip)
                 }
             }else{ //success
-                self.goNextVCWithID("PageVC")
+                let hud2 = JGProgressHUD(style: .dark)
+                hud2.textLabel.text = "Sign up success!Please log in."
+                hud2.indicatorView = JGProgressHUDSuccessIndicatorView()
+                hud2.show(in: self.view)
+                hud2.dismiss(afterDelay: 1.5)
             }
         })
     }

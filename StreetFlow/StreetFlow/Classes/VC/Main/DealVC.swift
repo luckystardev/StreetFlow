@@ -231,7 +231,7 @@ class DealVC: BaseVC {
             }else{ //success
                 let hud2 = JGProgressHUD(style: .dark)
                 hud2.textLabel.text = "Saved!"
-                hud2.indicatorView = JGProgressHUDErrorIndicatorView()
+                hud2.indicatorView = JGProgressHUDSuccessIndicatorView()
                 hud2.show(in: self.view)
                 hud2.dismiss(afterDelay: 1.5)
             }
