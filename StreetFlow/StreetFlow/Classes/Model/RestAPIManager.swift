@@ -25,7 +25,6 @@ class RestAPIManager: NSObject {
         let params = ["username": username, "password": password]
         
         AF.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).validate().responseJSON { (response) in
-            print(response)
             switch response.result {
             case .success(let value):
                 if let value = value as? [String: Any] {
@@ -96,6 +95,8 @@ class RestAPIManager: NSObject {
             switch response.result {
             case .success(let value):
                 if let value = value as? [String: Any] {
+                    userId = (value["id"] as! String)
+                    print("userId= \(userId!)")
                     callback(value as NSDictionary, nil)
                     return
                 }
@@ -115,8 +116,9 @@ class RestAPIManager: NSObject {
     func readAllProperties(callback:@escaping(ServiceArrayResponse)) {
         let url = URL(string: main_url + "properties/readAll/\(userId!)")!
         let headers:HTTPHeaders = ["Authorization":"Bearer \(access_token!)"]
+        print(url.relativeString)
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
-            print(response)
+//            print(response)
             switch response.result {
             case .success(let value):
                 if let value = value as? Array<Any> {

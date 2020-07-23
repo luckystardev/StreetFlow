@@ -25,6 +25,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     var isSuccess = false
     var mUserLocation:CLLocation!
     let lDelta = 0.002
+    var currentArtwork: Artwork?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,29 +40,75 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
             locationManager.startUpdatingLocation()
         }
         
-        // This is test code
-//        let location = CLLocationCoordinate2D(latitude: 37.785834,
-//                                              longitude: -122.406417)
-//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-//        let region = MKCoordinateRegion(center: location, span: span)
-//        map.setRegion(region, animated: true)
-//
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = location
-//        annotation.title = "Big Ben"
-//        annotation.subtitle = "New York"
-//        map.addAnnotation(annotation)
-        
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(setCurrentLocation), name: Notification.Name("CurrentLocation"), object: nil)
-
+        
+        getProperties()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
+    func getProperties() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = ""
+        hud.show(in: self.view)
+        
+        let webService =  RestAPIManager.sharedManager
+        webService?.readAllProperties(callback: { (responseObject:Array<Any>?, error:NSError?) in
+            hud.dismiss()
+            if((error) != nil){ //error
+                if let descrip = error?.localizedDescription{
+                    self.showErrorAlert(title: descrip)
+                }
+            }else{ //success
+                print("success")
+                print(responseObject?.count as Any)
+                print(responseObject!)
+                ary_properties = responseObject
+                if ary_properties != nil {
+                    self.addPropertyPins()
+                }
+            }
+        })
+    }
+    
+    func addPropertyPins() {
+        for (index, dic) in ary_properties.enumerated() {
+            if let property = dic as? [String: Any] {
+                var name: String = ""
+                var address: String = ""
+                var street: String = ""
+                
+                if let owner = property["owner_property"]! as? [String: String] {
+                    name = owner["owner"]!
+                    street = owner["property_label"]!
+                    address = owner["address"]!
+                }
+                if let location = property["geo"]! as? [String: Double] {
+                    let newcodi = CLLocationCoordinate2D(latitude: Double(location["lat"]!), longitude: Double(location["lon"]!))
+                    
+                    if index ==  ary_properties.count - 1 {
+                        let span = MKCoordinateSpan(latitudeDelta: lDelta, longitudeDelta: lDelta)
+                        let mRegion = MKCoordinateRegion(center: newcodi, span: span)
+                        map.setRegion(mRegion, animated: true)
+                    }
+                    
+                    let artwork = Artwork(name: name, street: street, address: address, coordinate: newcodi, index: index)
+                    self.map.addAnnotation(artwork)
+                }
+            }
+        }
+    }
+    
     func popupPropertyView() {
+        popNameLbl.text = currentArtwork?.name
+        popStreetLbl.text = currentArtwork?.street
+        popAddressLbl.text = currentArtwork?.address
+        
+        /*
         var info: [String : String?]?
         info = getbasicInfo()
         if info?["name"] != "" {
@@ -73,7 +120,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
             let zip_code : String = (info?["zip_code"] ?? "") ?? " "
             let address : String = city + ", " + state + " " + zip_code
             popAddressLbl.text = address
-        }
+        } */
         
         infoView.isHidden = true
         popInfoView.isHidden = false
@@ -85,6 +132,10 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
     }
     
     @IBAction func dropDownBtnAction(_ sender: Any) {
+        let dic = ary_properties[currentArtwork!.index]
+        if let property = dic as? [String: Any] {
+            pp_data = property
+        }
         popNextVCWithID("DealVC", isFull: false)
     }
     
@@ -115,6 +166,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
         
         locationManager.stopUpdatingLocation()
         
+        
         mUserLocation = locations[0] as CLLocation
 
         let center = CLLocationCoordinate2D(latitude: mUserLocation.coordinate.latitude, longitude: mUserLocation.coordinate.longitude)
@@ -123,6 +175,7 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
 
         map.setRegion(mRegion, animated: true)
         
+        /*
         let geocoder = CLGeocoder()
             
         // Look up the location and pass it to the completion handler
@@ -158,10 +211,8 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
                     }
                 }
             }
-        })
+        }) */
     }
-    
-    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error - locationManager: \(error.localizedDescription)")
@@ -173,13 +224,33 @@ class MapVC: BaseVC , MKMapViewDelegate, CLLocationManagerDelegate { //
 //        {
 //            self.popupPropertyView()
 //        }
-        if self.isSuccess {
-            self.popupPropertyView()
+        guard let artwork = view.annotation as? Artwork else {
+          return
         }
-    }
-    
-    func estateDataToDictionary(_ data:Any) {
-        
+        currentArtwork = artwork
+        self.popupPropertyView()
     }
 }
 
+class Artwork: NSObject, MKAnnotation {
+    let name: String?
+    let street: String?
+    let address: String?
+    let coordinate: CLLocationCoordinate2D
+    let index: Int
+    init(
+      name: String?,
+      street: String?,
+      address: String?,
+      coordinate: CLLocationCoordinate2D,
+      index: Int
+    ) {
+      self.name = name
+      self.street = street
+      self.address = address
+      self.coordinate = coordinate
+      self.index = index
+        
+      super.init()
+    }
+}

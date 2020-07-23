@@ -23,8 +23,8 @@ class LoginVC: BaseVC {
         applyAttributedString()
         
         //This is test code
-        emailTxtFld.text = "user@test.com"
-        pwdTxtFld.text = "qwerqwer"
+//        emailTxtFld.text = "mob@test.com"
+//        pwdTxtFld.text = "qwerqwer"
 //        self.updateFullname("LIEN KIEN;CHEN TRACY")
     }
     
@@ -67,7 +67,20 @@ class LoginVC: BaseVC {
                     self.showErrorAlert(title: descrip)
                 }
             }else{ //success
-                //TODO: save access_token
+                self.getMe()
+            }
+        })
+    }
+    
+    func getMe() {
+        let webService =  RestAPIManager.sharedManager
+        webService?.getUserInfo(callback: { (responseObject:NSDictionary?, error:NSError?) in
+            if((error) != nil){ //error
+                if let descrip = error?.localizedDescription{
+                    self.showErrorAlert(title: descrip)
+                }
+            }else{ //success
+                print("success")
                 self.goNextVCWithID("PageVC")
             }
         })

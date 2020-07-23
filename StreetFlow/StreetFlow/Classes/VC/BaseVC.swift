@@ -25,6 +25,22 @@ class BaseVC: UIViewController {
         hud2.dismiss(afterDelay: 2.0)
     }
     
+    func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
+        let newString = dateString.replacingOccurrences(of: "T", with: " ", options: .literal, range: nil)
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+
+        if let date = inputFormatter.date(from: newString) {
+
+          let outputFormatter = DateFormatter()
+          outputFormatter.dateFormat = format
+
+            return outputFormatter.string(from: date)
+        }
+
+        return nil
+    }
+    
     func updateFullname(_ name: String) -> String {
 //        var nameStr = name.replacingOccurrences(of: ";", with: ", ")
         print(name)

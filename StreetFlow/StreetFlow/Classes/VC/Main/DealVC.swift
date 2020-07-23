@@ -8,6 +8,7 @@
 
 import UIKit
 import TaggerKit
+import JGProgressHUD
 
 class DealVC: BaseVC {
     
@@ -51,6 +52,7 @@ class DealVC: BaseVC {
     var allTags: TKCollectionView!
     
     let phoneFieldTag = 1000
+    var detailDic: [String: String]! = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,71 @@ class DealVC: BaseVC {
         
         initTags()
         
+//        initESData()
+        initPPData()
+    }
+    
+    func initPPData() {
+        if let owner = pp_data["owner_property"]! as? [String: String] {
+            owner_name.text = owner["owner"]!
+            owner_street.text = owner["property_label"]!
+            owner_address.text = owner["address"]!
+        }
+        
+        if let sales = pp_data["sale_info"]! as? [String: Any] {
+            let saleDate = sales["date"]! as? String
+            sale_date.text = formattedDateFromString(dateString: saleDate!, withFormat: "MMM dd, yyyy")!
+            sale_price.text = "\(sales["price"]!)"
+        }
+        
+        if let mort = pp_data["mort_info"]! as? [String: Any] {
+            mort_price.text = mort["name"]! as? String
+            mort_date.text = "\(mort["amount"]!)"
+            mort_assessedVale.text = "\(mort["value"]!)"
+        }
+        
+        property_improve.text = "\(pp_data["improvement_value"]!)"
+        property_land.text = "\(pp_data["land_value"]!)"
+        property_total.text = "\(pp_data["total_value"]!)"
+        property_datebulit.text = "\(pp_data["year"]!)"
+        property_square.text = "\(pp_data["square_footage"]!)"
+        property_acreage.text = "\(pp_data["acreage"]!)"
+        
+        if let dist = pp_data["dist_info"]! as? [String: Any] {
+            school_district.text = dist["school_district"]! as? String
+        }
+        
+        if let ownerDetails = pp_data["owner_details"]! as? [String: String] {
+            detailDic = ownerDetails
+            emailLbl.text = ownerDetails["email"]!
+            phoneLbl.text = ownerDetails["phone"]!
+        }
+        
+        if let tags = pp_data["property_tags"]! as? Array<String> {
+            if tags.count == 0 {
+                print("tag empty")
+            } else {
+                print("tag isn't empty")
+                updateTags(tags)
+            }
+        }
+        
+    }
+    
+    func updateTags(_ tags: Array<String>) {
+        productTags = TKCollectionView(tags: tags,
+                                       action: .removeTag,
+                                       receiver: nil)
+        
+        add(productTags, toView: tagContainer)
+    }
+    
+    func updateTagData() {
+        pp_data["property_tags"] = productTags.tags
+        updateProperty()
+    }
+    
+    func initESData() {
         if es_data != nil {
              //need to update
              school_district.text = "unknown"
@@ -98,7 +165,7 @@ class DealVC: BaseVC {
                     }
                     if let deedl = deeds.last as? NSDictionary {
                         mort_date.text = "$\(String(describing: deedl["loan_amount"]!))"
-                        mort_price.text = deedl["lender_name"] as? String                       
+                        mort_price.text = deedl["lender_name"] as? String
                     }
                 }
             }
@@ -144,6 +211,33 @@ class DealVC: BaseVC {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func removePropertyAction(_ sender: Any) {
+        
+    }
+    
+    func updateProperty() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = ""
+        hud.show(in: self.view)
+        
+        print(pp_data!)
+        let webService =  RestAPIManager.sharedManager
+        webService?.updateProperty(pp_data, callback: { (responseObject:NSDictionary?, error:NSError?) in
+            hud.dismiss()
+            if((error) != nil){ //error
+                if let descrip = error?.localizedDescription{
+                    self.showErrorAlert(title: descrip)
+                }
+            }else{ //success
+                let hud2 = JGProgressHUD(style: .dark)
+                hud2.textLabel.text = "Saved!"
+                hud2.indicatorView = JGProgressHUDErrorIndicatorView()
+                hud2.show(in: self.view)
+                hud2.dismiss(afterDelay: 1.5)
+            }
+        })
+    }
+    
     @IBAction func closeTagViewAction(_ sender: Any) {
         addTagView.isHidden = true
         self.view.endEditing(true)
@@ -197,6 +291,10 @@ class DealVC: BaseVC {
                 self.phoneLbl.text = placeTxt
             } else {
                 self.phoneLbl.text = formattedPhone
+                
+                self.detailDic["phone"] = self.phoneLbl.text
+                pp_data["owner_details"] = self.detailDic
+                self.updateProperty()
             }
         }
 
@@ -219,6 +317,10 @@ class DealVC: BaseVC {
             // do something interesting with "answer" here
             if self.emailLbl.text != "" {
                 self.emailLbl.text = answer.text
+                
+                self.detailDic["email"] = self.emailLbl.text
+                pp_data["owner_details"] = self.detailDic
+                self.updateProperty()
             }
         }
 
@@ -273,8 +375,7 @@ class DealVC: BaseVC {
 
         return leadingOne + areaCode + prefix + "-" + suffix
     }
-
-
+    
 }
 
 extension DealVC: UITextFieldDelegate {
@@ -318,9 +419,12 @@ extension DealVC: TKCollectionViewDelegate {
     func tagIsBeingAdded(name: String?) {
         // Example: save testCollection.tags to UserDefault
         print("added \(name!)")
+        updateTagData()
     }
     
     func tagIsBeingRemoved(name: String?) {
         print("removed \(name!)")
+        updateTagData()
     }
+    
 }

@@ -18,9 +18,11 @@ class SearchVC: BaseVC {
     @IBOutlet weak var bottomMenuBtn: UIButton!
     
     @IBOutlet weak var bottomViewConst: NSLayoutConstraint!
-    var index = 0
+//    var index = 0
     var isSuccess = false
-    var info: [String : String?]?
+//    var info: [String : String?]?
+    
+    var filtered_properties: Array<Any>! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +55,33 @@ class SearchVC: BaseVC {
             self.view.layoutIfNeeded()
         }
     }
+    
+    func filterProperty(_ key: String) {
+        for (index, dic) in ary_properties.enumerated() {
+            if let property = dic as? [String: Any] {
+                var address: String = ""
+                var street: String = ""
+                
+                if let owner = property["owner_property"]! as? [String: String] {
+                    street = owner["property_label"]!
+                    address = owner["address"]!
+                    if street.contains(key) || address.contains(key) {
+                        filtered_properties.append(dic)
+                    }
+                }
+                if index == ary_properties.count - 1 {
+                    self.tableview.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        filterProperty(textField.text!)
+        /*
 //        let hud = JGProgressHUD(style: .dark)
 //        hud.textLabel.text = ""
 //        hud.show(in: self.view)
@@ -83,7 +108,7 @@ extension SearchVC: UITextFieldDelegate {
                     }
                 }
             }
-        }
+        } */
         
         textField.resignFirstResponder()
         
@@ -94,11 +119,22 @@ extension SearchVC: UITextFieldDelegate {
 extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return index
+//        return index
+        return filtered_properties.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! ListCell
+        
+        let dic = filtered_properties[indexPath.row]
+        if let property = dic as? [String: Any] {
+            if let owner = property["owner_property"]! as? [String: String] {
+                cell.nameLbl.text = owner["owner"]!
+                cell.streetLbl.text = owner["property_label"]!
+                cell.addressLbl.text = owner["address"]!
+            }
+        }
+        /*
         let ownerStr = info?["name"] ?? ""
         cell.nameLbl.text = updateFullname(ownerStr!)
         cell.streetLbl.text = info?["formatted_street_address"] ?? ""
@@ -107,11 +143,16 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         let zip_code : String = (info?["zip_code"] ?? "") ?? " "
         let address : String = city + ", " + state + " " + zip_code
         cell.addressLbl.text = address
+        */
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dic = filtered_properties[indexPath.row]
+        if let property = dic as? [String: Any] {
+            pp_data = property
+        }
         self.popNextVCWithID("DealVC", isFull: false)
     }
     

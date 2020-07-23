@@ -12,7 +12,9 @@ import Parse
 
 var es_data: NSDictionary!
 var access_token: String!
-var userId: String!
+var userId: String! = "67b6e919-d5a2-403f-8e64-256b769ee0ed"
+var ary_properties: Array<Any>! = []
+var pp_data: [String: Any]!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
