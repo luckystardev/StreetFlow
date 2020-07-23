@@ -101,7 +101,8 @@ class LoginVC: BaseVC {
             if endFrameY >= UIScreen.main.bounds.size.height {
                 self.bottomViewYConst?.constant = 0.0
             } else {
-                self.bottomViewYConst?.constant = endFrame?.size.height ?? 0.0
+//                self.bottomViewYConst?.constant = endFrame?.size.height ?? 0.0
+                self.bottomViewYConst?.constant = 112
             }
             UIView.animate(withDuration: duration,
                                        delay: TimeInterval(0),
