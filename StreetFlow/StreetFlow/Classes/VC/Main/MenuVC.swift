@@ -13,6 +13,7 @@ class MenuVC: BaseVC {
     @IBOutlet weak var selectLocationView: RoundView!
     @IBOutlet weak var bottomCloseBtn: UIButton!
     @IBOutlet weak var fullnameLbl: UILabel!
+    @IBOutlet weak var usertyleLbl: UILabel!
     @IBOutlet weak var firstnameLbl: UITextField!
     @IBOutlet weak var lastnameLbl: UITextField!
     @IBOutlet weak var phoneLbl: UITextField!
@@ -23,14 +24,11 @@ class MenuVC: BaseVC {
         selectLocationView.addShadowEffect()
         bottomCloseBtn.addShadowEffect()
         
-//        let user = PFUser.current()
-//        let fname = user!["first_name"] as! String
-//        let lname = user!["last_name"] as! String
-//        let phone = user!["phone"] as? String
-//        fullnameLbl.text = fname + " " + lname
-//        firstnameLbl.text = fname
-//        lastnameLbl.text = lname
-//        phoneLbl.text = phone
+        firstnameLbl.text = userfname
+        lastnameLbl.text = userlname
+        phoneLbl.text = userPhone
+        fullnameLbl.text = userfname + " " + userlname
+        usertyleLbl.text = userType + " user"
     }
     
     @IBAction func logoutBtnAction(_ sender: Any) {

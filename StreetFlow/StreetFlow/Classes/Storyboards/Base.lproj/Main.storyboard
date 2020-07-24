@@ -2746,6 +2746,7 @@
                         <outlet property="lastnameLbl" destination="ls6-ee-2Ap" id="m2g-d4-XWr"/>
                         <outlet property="phoneLbl" destination="5DJ-3j-w2B" id="7Mr-Pg-8hB"/>
                         <outlet property="selectLocationView" destination="sL5-kd-bVd" id="AGT-Vr-aja"/>
+                        <outlet property="usertyleLbl" destination="sqI-9b-1J0" id="z5N-ZR-VLl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5S-lS-pq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

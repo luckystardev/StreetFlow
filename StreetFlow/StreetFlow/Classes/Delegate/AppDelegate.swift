@@ -11,7 +11,11 @@ import CoreLocation
 
 var es_data: NSDictionary!
 var access_token: String!
-var userId: String! = "67b6e919-d5a2-403f-8e64-256b769ee0ed"
+var userId: String! = ""//"67b6e919-d5a2-403f-8e64-256b769ee0ed"
+var userfname: String! = ""
+var userlname: String! = ""
+var userPhone: String! = ""
+var userType: String! = ""
 var ary_properties: Array<Any>! = []
 var pp_data: [String: Any]!
 

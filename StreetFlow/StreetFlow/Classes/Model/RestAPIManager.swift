@@ -96,6 +96,16 @@ class RestAPIManager: NSObject {
             case .success(let value):
                 if let value = value as? [String: Any] {
                     userId = (value["id"] as! String)
+                    userfname = (value["firstname"] as! String)
+                    userlname = (value["lastname"] as! String)
+                    userPhone = (value["phone"] as! String)
+                    let membership = (value["membership"] as! String)
+                    if membership == "" {
+                        userType = "free"
+                    } else {
+                        userType = membership
+                    }
+                    
                     print("userId= \(userId!)")
                     callback(value as NSDictionary, nil)
                     return
