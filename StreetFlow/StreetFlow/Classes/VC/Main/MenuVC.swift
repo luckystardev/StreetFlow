@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class MenuVC: BaseVC {
 
@@ -35,7 +34,6 @@ class MenuVC: BaseVC {
     }
     
     @IBAction func logoutBtnAction(_ sender: Any) {
-//        PFUser.logOut()
         let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstVC")
         UIApplication.shared.windows.first?.rootViewController = firstVC
         UIApplication.shared.windows.first?.makeKeyAndVisible()

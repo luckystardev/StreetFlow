@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import Parse
 
 var es_data: NSDictionary!
 var access_token: String!
@@ -30,13 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         locationManager.requestAlwaysAuthorization()
-        
-        let configuration = ParseClientConfiguration {
-            $0.applicationId = parse_applicationId
-            $0.clientKey = parse_clientKey
-            $0.server = parse_url
-        }
-        Parse.initialize(with: configuration)
         
         return true
     }

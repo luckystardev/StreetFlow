@@ -23,9 +23,10 @@ class LoginVC: BaseVC {
         applyAttributedString()
         
         //This is test code
-//        emailTxtFld.text = "mob@test.com"
-//        pwdTxtFld.text = "qwerqwer"
-//        self.updateFullname("LIEN KIEN;CHEN TRACY")
+        emailTxtFld.text = "mob@test.com"
+        pwdTxtFld.text = "qwerqwer"
+//        emailTxtFld.text = "ecl86@cornell.edu"
+//        pwdTxtFld.text = "test"
     }
     
     override func viewDidAppear(_ animated: Bool) {
